@@ -14,7 +14,7 @@ Plug 'romgrk/barbar.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'itchyny/lightline.vim'
 
@@ -235,7 +235,7 @@ let g:dashboard_custom_header = [
 \]
 
 " Indent-blankline setup
-let g:indent_blankline_filetype_exclude = ['dashboard', 'telescope']
+" let g:indent_blankline_filetype_exclude = ['dashboard', 'telescope']
 
 " Emmet setup
 let g:user_emmet_leader_key = '<C-e>'
