@@ -3,7 +3,7 @@ compinit
 zstyle ":completion;*" menu select
 
 autoload -Uz promptinit && promptinit
-PROMPT="%F{7}[%f%F{121}%n%f%F{228}@%f%F{152}%m%f %~%F{7}]%f%F{7}$%f"
+PROMPT="%F{7}[%f%F{193}%n%f%F{217}@%f%F{152}%m%f %~%F{7}]%f%F{7}$%f "
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
