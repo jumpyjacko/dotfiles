@@ -3,7 +3,7 @@ compinit
 zstyle ":completion;*" menu select
 
 autoload -Uz promptinit && promptinit
-prompt elite2
+PROMPT="%F{7}[%f%F{121}%n%f%F{228}@%f%F{152}%m%f %~%F{7}]%f%F{7}$%f"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
