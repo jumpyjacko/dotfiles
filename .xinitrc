@@ -1,4 +1,4 @@
 setxkbmap -layout us -variant colemak
 
-nitrogen --restore &
+dwmbar &
 exec dwm

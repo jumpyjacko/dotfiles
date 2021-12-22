@@ -1,0 +1,1 @@
+MODULES="time date weather wifi volume backlight temperature battery kernel"
