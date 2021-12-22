@@ -21,7 +21,7 @@ dwmbar is a bit finicky and a pain in the ass, use this command:
 `sudo cp ~/.config/dwmbar/dwmbarrc /usr/share/dwmbar/config`
 
 Quick install for the prerequisites:
-`sudo pacman -Syu feh zsh neovim alacritty firefox exa git neofetch dwmbar xorg`
+`sudo pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg`
 
 ## Window manager
 I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm).
