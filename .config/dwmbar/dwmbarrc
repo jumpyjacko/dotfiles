@@ -1,1 +1,11 @@
+#!/bin/bash
+
 MODULES="time date weather wifi volume backlight temperature battery kernel"
+
+ONLINE_MODULES="weather wifi"
+
+DELAY="0.05"
+
+SEPARATOR=" | "
+RIGHT_PADDING=" "
+LEFT_PADDING=" "

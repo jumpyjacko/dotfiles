@@ -8,6 +8,7 @@ prompt elite2
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias ls="exa -la --git --group-directories-first"
+alias neofetch="neofetch --ascii_colors 3 3"
 
 alias e="$EDITOR"
 alias p="sudo pacman"
