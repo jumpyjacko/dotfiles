@@ -80,23 +80,23 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'``
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 " Nvim Tree Setup
-let g:nvim_tree_auto_open = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
-let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last window
-let g:nvim_tree_auto_ignore_ft = [ 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
-let g:nvim_tree_quit_on_open = 0
-let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
-let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
-let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
-let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-let g:nvim_tree_tab_open = 1 "0 by default, will open the tree when entering a new tab and the tree was previously open
-let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
-let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-let g:nvim_tree_hijack_cursor = 0 "1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
-let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-let g:nvim_tree_update_cwd = 1 "0 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
-let g:nvim_tree_respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-let g:nvim_tree_window_picker_exclude = {
+let g:open_on_setup = 1 "0 by default, opens the tree when typing `vim $DIR` or `vim`
+let g:auto_close = 1 "0 by default, closes the tree when it's the last window
+let g:auto_ignore_ft = [ 'dashboard' ] "empty by default, don't auto open tree on specific filetypes.
+let g:quit_on_open = 0
+let g:follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
+let g:git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
+let g:highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
+let g:open_on_tab = 1 "0 by default, will open the tree when entering a new tab and the tree was previously open
+let g:add_trailing = 1 "0 by default, append a trailing slash to folder names
+let g:group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
+let g:hijack_cursor = 0 "1 by default, when moving cursor in the tree, will position the cursor at the start of the file on the current line
+let g:icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
+let g:symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
+let g:update_cwd = 1 "0 by default, will update the tree cwd when changing nvim's directory (DirChanged event). Behaves strangely with autochdir set.
+let g:respect_buf_cwd = 1 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+let g:window_picker_exclude = {
     \   'filetype': [
     \     'packer',
     \     'qf'
@@ -241,7 +241,6 @@ let g:dashboard_custom_header = [
 let g:user_emmet_leader_key = '<C-e>'
 
 set termguicolors " this variable must be enabled for colors to be applied properly
-set shell=powershell
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
