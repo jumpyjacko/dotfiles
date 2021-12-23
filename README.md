@@ -24,6 +24,11 @@ Get the dotfiles.
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg && alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
+Run the `install.sh` script.
+```sh
+sudo bash -x ./install.sh
+```
+
 All the `paru`.
 ```sh
 git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && paru -S nerd-fonts-mononoki
