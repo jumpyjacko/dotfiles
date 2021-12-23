@@ -1,6 +1,6 @@
 #!/bin/bash
 # Pacman installs
-pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel
+pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg
 
 # Paru install + what needs to be installed
 git clone https://aur.archlinux.org/paru.git
