@@ -2,10 +2,6 @@
 # Pacman installs
 pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel
 
-# Preparing the dotfiles repository
-git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
-alias config='/usr/bin/git --git-di$HOME/.cfg --work-tree=$HOME'
-
 # Paru install + what needs to be installed
 git clone https://aur.archlinux.org/paru.git
 cd paru
