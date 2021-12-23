@@ -13,7 +13,7 @@ git clone https://github.com/thytom/dwmbar.git
 cd dwmbar
 ./install.sh
 cd ..
-cp ~/.config/dwmbar/dwmbarrc /usr/share/dwmbar/config
+cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config
 
 # Set zsh things
 chsh -s /usr/bin/zsh
