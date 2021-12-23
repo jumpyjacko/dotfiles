@@ -21,7 +21,9 @@ I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm
 ## Commands to run
 Get the dotfiles.
 ```sh
-git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg && alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config checkout
 ```
 
 Run the `install.sh` script.
@@ -31,7 +33,11 @@ sudo bash -x ./install.sh
 
 All the `paru`.
 ```sh
-git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && paru -S nerd-fonts-mononoki
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ..
+paru -S nerd-fonts-mononoki
 ```
 
 ## Gallery
