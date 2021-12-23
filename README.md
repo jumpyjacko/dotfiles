@@ -21,14 +21,19 @@ Pacman install things.
 sudo pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel
 ```
 
+Get the dotfiles.
+```sh
+git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg && alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
+
 All the `paru`.
 ```sh
 git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd .. && paru -S nerd-fonts-mononoki
 ```
 
-Get the dotfiles.
+Install `dwm`.
 ```sh
-git clone https://github.com/JumpyJacko/dotfiles.git && mv -vf ~/dotfiles/* .
+git clone https://github.com/JumpyJacko/dwm.git && cd dwm && sudo make clean install && cd ..
 ```
 
 Do all the `dwmbar` things.
