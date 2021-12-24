@@ -21,7 +21,7 @@ I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm
 ## Commands to run
 Get and run `install.sh` script. (Requires no input until end of script where `paru` is being compiled)
 ```sh
-curl -LJO https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && sudo bash -x ./install.sh
+curl -LJO https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && bash ./install.sh
 ```
 
 ## Gallery
