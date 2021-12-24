@@ -26,6 +26,11 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout
 ```
 
+Testing:
+```sh
+curl -LJO https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && sudo bash -x ./install.sh
+```
+
 Run the `install.sh` script.
 ```sh
 sudo bash -x ./install.sh
