@@ -3,7 +3,7 @@
 read -sp 'Sudoers Password: ' passvar
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel && sudo -k
+echo $passvar | sudo -S pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel | echo all | && sudo -k
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
