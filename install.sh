@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -sp 'Sudoers Password: ' passvar
+read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
 
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg && sudo -k
@@ -24,11 +24,11 @@ cd ..
 echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 
 # Set zsh things
-chsh -s /usr/bin/zsh
+echo $passvar | sudo -S chsh -s /usr/bin/zsh
 
 # Paru install + what needs to be installed
 git clone https://aur.archlinux.org/paru.git
 cd paru
-echo $passvar | makepkg -si --noconfirm
+makepkg -si --noconfirm
 cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki

@@ -18,10 +18,13 @@ It is required that X11 is used, I can't be bothered with wayland and I just use
 ## Window manager
 I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm).
 
-## Commands to run
+## Installation (from clean install)
 Get and run `install.sh` script. (Requires no input until end of script where `paru` is being compiled)
-```sh
-curl -LJO https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && bash ./install.sh
+```bash
+curl -LJo install1.sh https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && bash ./install1.sh
+
+# After the script is done
+rm install1.sh
 ```
 
 ## Gallery
