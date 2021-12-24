@@ -7,8 +7,7 @@ echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
-alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
-config checkout
+/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 
 # dwm install
 git clone https://github.com/JumpyJacko/dwm.git
@@ -24,7 +23,7 @@ cd ..
 echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 
 # Set zsh things
-echo $passvar | sudo -S chsh -s /usr/bin/zsh
+echo $passvar | chsh -s /usr/bin/zsh
 
 # Paru install + what needs to be installed
 git clone https://aur.archlinux.org/paru.git
