@@ -3,19 +3,12 @@
 read -sp 'Sudoers Password: ' passvar
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel | echo all | sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg base-devel && sudo -k
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
-alias config='/usr/bin/git --git-di$HOME/.cfg --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 config checkout
-
-# Paru install + what needs to be installed
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
-paru -S nerd-fonts-mononoki
 
 # dwm install
 git clone https://github.com/JumpyJacko/dwm.git
@@ -26,11 +19,16 @@ cd ..
 # dwmbar install and configuration
 git clone https://github.com/thytom/dwmbar.git
 cd dwmbar
-echo $passvar | sudo -S ./install.sh
+echo $passvar | sudo -S ./install.sh && sudo -k
 cd ..
-cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config
+echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 
 # Set zsh things
 chsh -s /usr/bin/zsh
 
-sudo -k
+# Paru install + what needs to be installed
+git clone https://aur.archlinux.org/paru.git
+cd paru
+echo $passvar | makepkg -si --noconfirm
+cd ..
+paru -Syu --noconfirm nerd-fonts-mononoki
