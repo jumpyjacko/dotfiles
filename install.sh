@@ -3,7 +3,6 @@
 read -sp 'Sudoers Password: ' passvar
 
 # Pacman installs
-<<<<<<< HEAD
 echo passvar | sudo pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg base-devel && sudo -k
 
 # Preparing the dotfiles repository
@@ -16,9 +15,6 @@ cd paru
 makepkg -si
 cd ..
 paru -S nerd-fonts-mononoki
-=======
-pacman -Syu feh zsh neovim alacritty firefox exa git neofetch xorg
->>>>>>> c80c22bfc57752f31f6cf7de8b147b7ca18a5218
 
 # dwm install
 git clone https://github.com/JumpyJacko/dwm.git
