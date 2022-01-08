@@ -6,7 +6,7 @@ read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passva
 cd ~
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg python python-pip && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg python python-pip nodejs dmenu && sudo -k
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
