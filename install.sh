@@ -1,12 +1,13 @@
 #!/bin/bash
 
 read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
+read -sp 'Github Email (For making a ssh key pair, be there for the setup): ' githubEmail
 
 # Move to home directory, just to make sure you are already there
 cd ~
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg python python-pip nodejs dmenu && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git openssh neofetch xorg python python-pip nodejs dmenu && sudo -k
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
@@ -38,3 +39,6 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki
+
+# Generating an ssh key pair for Github
+ssh-keygen -t ed25519 -C "$githubEmail"
