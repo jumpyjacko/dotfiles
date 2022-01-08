@@ -1,7 +1,7 @@
 # My Personal Set of dotfiles (Arch btw)
 A nice and minimal setup with a very utilitarian theme. All monochrome because its really nice.
 
-## Prerequisites
+## Prerequisites (These are all installed with the script)
 - Mononoki Nerd Font
 - dwmbar
 - feh
@@ -11,6 +11,7 @@ A nice and minimal setup with a very utilitarian theme. All monochrome because i
 - firefox
 - exa
 - neofetch
+- almond (mandelbrot set viewer because it's cool)
 
 Notes:
 It is required that X11 is used, I can't be bothered with wayland and I just used the `archinstall` script and picking the `xorg` option at the end of the install.
