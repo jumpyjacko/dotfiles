@@ -214,6 +214,8 @@ nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose and NvimTreeFocus are also available if you need them
 
+lua require'nvim-tree'.setup {}
+
 " Dashboard quick setup
 let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_shortcut={
