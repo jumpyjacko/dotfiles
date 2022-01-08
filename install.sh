@@ -7,7 +7,17 @@ read -sp 'Github Email (For making a ssh key pair, be there for the setup): ' gi
 cd ~
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git openssh neofetch xorg python python-pip nodejs dmenu && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
+
+# Note:
+# About using bpytop, braille characters will not render correctly due to
+# firefox package using gnu-free-fonts.
+#
+# How to fix:
+# sudo pacman -R firefox gnu-free-fonts
+# and then
+# sudo pacman -S firefox
+# and pick number 2 when prompted to install noto-fonts instead of gnu-free-fonts.
 
 # Preparing the dotfiles repository
 git clone --bare git@github.com:JumpyJacko/dotfiles.git $HOME/.cfg
