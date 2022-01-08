@@ -10,7 +10,7 @@ cd ~
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git openssh neofetch xorg python python-pip nodejs dmenu && sudo -k
 
 # Preparing the dotfiles repository
-git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
+git clone --bare git@github.com:JumpyJacko/dotfiles.git $HOME/.cfg
 /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 
 # dwm install
