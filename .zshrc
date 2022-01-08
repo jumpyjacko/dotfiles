@@ -34,6 +34,3 @@ alias ...="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
-
-# Aliases for fun
-alias almond="python -m ~/Almonds/almonds.main"
