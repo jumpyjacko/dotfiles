@@ -1,8 +1,8 @@
 #!/bin/bash
 
-MODULES="time date weather wifi volume backlight temperature battery kernel"
+MODULES="time date weather volume battery archupdates kernel"
 
-ONLINE_MODULES="weather wifi"
+ONLINE_MODULES="weather"
 
 DELAY="0.05"
 
