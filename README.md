@@ -11,6 +11,7 @@ A nice and minimal setup with a very utilitarian theme. All monochrome because i
 - firefox
 - exa
 - neofetch
+- bpytop
 - almond (mandelbrot set viewer because it's cool)
 
 Notes:
