@@ -2,8 +2,11 @@
 
 read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
 
+# Move to home directory, just to make sure you are already there
+cd ~
+
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git neofetch xorg python python-pip && sudo -k
 
 # Preparing the dotfiles repository
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
@@ -21,6 +24,10 @@ cd dwmbar
 echo $passvar | sudo -S ./install.sh && sudo -k
 cd ..
 echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
+
+# Download almond (fractal viewer)
+pip install pillow
+git clone https://github.com/Tenchi2xh/Almonds.git
 
 # Set zsh things
 echo $passvar | chsh -s /usr/bin/zsh
