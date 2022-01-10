@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -spe 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
-read -pe $'\nGithub Email (For making a ssh key pair, be there for the setup): ' githubEmail
+read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
+read -p $'\nGithub Email (For making a ssh key pair, be there for the setup): ' githubEmail
 
 # Move to home directory, just to make sure you are already there
 cd ~
