@@ -28,7 +28,7 @@ echo -e "Downloading and setting up dotfiles git bare repository"
 echo -e "----------\n"
 
 # Preparing the dotfiles repository
-git clone --bare git@github.com:JumpyJacko/dotfiles.git $HOME/.cfg
+git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
 /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 
 echo -e "----------"
@@ -36,7 +36,7 @@ echo -e "Downloading and install dwm and it's extras"
 echo -e "----------\n"
 
 # dwm install
-git clone git@github.com:JumpyJacko/dwm.git
+git clone https://github.com/JumpyJacko/dwm.git
 cd dwm
 echo $passvar | sudo -S make clean install && sudo -k
 cd ..
