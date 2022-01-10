@@ -11,7 +11,7 @@ echo "Downloading packages from the official arch repositories"
 echo "----------"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty firefox exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
 
 # Note:
 # About using bpytop, braille characters will not render correctly due to
