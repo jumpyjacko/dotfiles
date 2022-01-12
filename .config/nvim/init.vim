@@ -9,6 +9,7 @@ Plug 'jooize/vim-colemak'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'wfxr/minimap.vim'
 Plug 'romgrk/barbar.nvim'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -152,6 +153,11 @@ let g:nvim_tree_icons = {
     \     'error': "",
     \   }
     \ }
+
+" Minimap configuration
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_block_filetypes = ['nvimtree', 'barbar', 'telescope']
 
 " Bar-bar keybindings
 " Move to previous/next

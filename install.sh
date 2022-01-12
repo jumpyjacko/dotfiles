@@ -72,7 +72,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 cd ..
-paru -Syu --noconfirm nerd-fonts-mononoki
+paru -Syu --noconfirm nerd-fonts-mononoki code-minimap
 
 echo -e "----------"
 echo -e "Generating a ssh keypair for Github ssh"
