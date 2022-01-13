@@ -33,6 +33,7 @@ Plug 'glepnir/dashboard-nvim'
 call plug#end()
 
 set nowrap
+set formatoptions-=t
 
 set modelines=0
 
