@@ -2,8 +2,6 @@
 
 MODULES="time date weather volume battery archupdates kernel"
 
-ONLINE_MODULES="weather"
-
 DELAY="0.05"
 
 SEPARATOR=" | "
