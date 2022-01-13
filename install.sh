@@ -11,7 +11,7 @@ echo -e "Downloading packages from the official arch repositories"
 echo -e "----------\n"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
 # Note:
