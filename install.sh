@@ -12,6 +12,7 @@ echo -e "----------\n"
 
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh neovim alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
 # Note:
 # About using bpytop, braille characters will not render correctly due to
