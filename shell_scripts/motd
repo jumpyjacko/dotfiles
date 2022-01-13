@@ -1,0 +1,37 @@
+#!/bin/bash
+
+LOCATION=`curl -s wttr.in/?format=%l`
+
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0;0m'
+
+echo -e "${YELLOW}Weather${NC}: ${LOCATION}\n"
+curl -s 'wttr.in/?0?Q'
+
+echo ""
+
+echo -e "${YELLOW}Current Login${NC}: "
+
+CURR_NAME=`last | sed '1!d' | sed '1 s/ .*//'`
+CURR_SYS=`last | sed '2!d' | awk '{ print $4 }'`
+CURR_UP_HR=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f1`
+CURR_UP_MIN=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f2`
+CURR_START=`last | sed '/boot/q42' | sed '1d' | awk '{ print $5,$6,$7,$8 }'`
+
+echo -e "    ${YELLOW}${CURR_NAME}${NC}: "
+echo -e "        ${YELLOW}System Version${NC}: ${CURR_SYS}"
+echo -e "        ${YELLOW}Uptime${NC}: ${RED}${CURR_UP_HR}${NC} hr, ${RED}${CURR_UP_MIN}${NC} min"
+echo -e "        ${YELLOW}Start Time${NC}: ${CURR_START}"
+
+echo ""
+
+echo -e "${YELLOW}Last Login${NC}: "
+
+LAST_NAME=`last | sed '3!d' | sed '1 s/ .*//'`
+LAST_SYS=`last | sed '4!d' | awk '{ print $4 }'`
+LAST_START=`last | sed '4!d' | awk '{ print $5,$6,$7,$8 }'`
+
+echo -e "    ${YELLOW}${LAST_NAME}${NC}: "
+echo -e "        ${YELLOW}System Version${NC}: ${LAST_SYS}"
+echo -e "        ${YELLOW}Start Time${NC}: ${LAST_START}"
