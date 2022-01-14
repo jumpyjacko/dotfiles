@@ -39,5 +39,5 @@ alias .5="cd ../../../../.."
 alias brightness='xrandr --output eDP1 --brightness'
 
 # Aliases for my fun shell scripts
-alias wt="./shell_scripts/weather"
-alias motd="./shell_scripts/motd"
+alias wt="~/shell_scripts/weather"
+alias motd="~/shell_scripts/motd"
