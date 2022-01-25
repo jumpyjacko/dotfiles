@@ -1,7 +1,6 @@
 #!/bin/bash
 
 read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passvar
-read -p $'\nGithub Email (For making a ssh key pair, be there for the setup): ' githubEmail
 
 # Move to home directory, just to make sure you are already there
 cd ~
@@ -12,6 +11,7 @@ echo -e "----------\n"
 
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu bpytop && sudo -k
+# Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
 # Note:
@@ -23,6 +23,10 @@ echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fc
 # and then
 # sudo pacman -S firefox
 # and pick number 2 when prompted to install noto-fonts instead of gnu-free-fonts.
+
+# Note 2:
+# Remember to run :PlugInstall and :CocInsatll <langauge servers, check coc-nvim github>
+# after opening neovim
 
 echo -e "----------"
 echo -e "Downloading and setting up dotfiles git bare repository"
@@ -50,14 +54,6 @@ cd ..
 echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 
 echo -e "----------"
-echo -e "Downloading Almonds"
-echo -e "----------\n"
-
-# Download almonds (fractal viewer)
-pip install pillow
-git clone https://github.com/Tenchi2xh/Almonds.git
-
-echo -e "----------"
 echo -e "Setting zsh as default shell"
 echo -e "----------\n"
 
@@ -74,12 +70,3 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki code-minimap
-
-echo -e "----------"
-echo -e "Generating a ssh keypair for Github ssh"
-echo -e "----------\n"
-
-# Generating an ssh key pair for Github
-ssh-keygen -t ed25519 -C "$githubEmail"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
