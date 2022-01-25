@@ -1,3 +1,5 @@
 [user]
 	email = bobjacklee27@gmail.com
 	name = JumpyJacko
+[core]
+	editor = nvim
