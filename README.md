@@ -1,7 +1,7 @@
 # My Personal Set of dotfiles (Arch btw)
 A nice and minimal setup with a very utilitarian theme. All monochrome because its really nice.
 
-## Prerequisites (These are all installed with the script)
+## Whats being used (These are all installed with the script)
 - Mononoki Nerd Font
 - dwmbar
 - feh
