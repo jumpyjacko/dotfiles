@@ -1,18 +1,8 @@
 # My Personal Set of dotfiles (Arch btw)
 A nice and minimal setup with a very utilitarian theme. All monochrome because its really nice.
 
-## Prerequisites (These are all installed with the script)
-- Mononoki Nerd Font
-- dwmbar
-- feh
-- zsh
-- neovim
-- alacritty
-- firefox
-- exa
-- neofetch
-- bpytop
-- almond (mandelbrot set viewer because it's cool)
+## Whats being used (These are all installed with the script)
+Look at `install.sh`, it has everything there.
 
 Notes:
 It is required that X11 is used, I can't be bothered with wayland and I just used the `archinstall` script and picking the `xorg` option at the end of the install.
