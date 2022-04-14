@@ -9,6 +9,7 @@ It is required that X11 is used, I can't be bothered with wayland and I just use
 
 ## Window manager
 I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm).
+I also use my fork of thytom/dwmbar at [this repository](https://github.com/JumpyJacko/dwmbar).
 
 ## Installation (from clean install)
 Get and run `install.sh` script. (Requires no input until end of script where `paru` is being compiled)

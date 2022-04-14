@@ -53,7 +53,7 @@ echo $passvar | sudo -S make clean install && sudo -k
 cd ..
 
 # dwmbar install and configuration
-git clone https://github.com/thytom/dwmbar.git
+git clone https://github.com/jumpyjacko/dwmbar.git
 cd dwmbar
 echo $passvar | sudo -S ./install.sh && sudo -k
 cd ..
