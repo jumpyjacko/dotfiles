@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MODULES="time date weather volume battery archupdates kernel"
+MODULES="time date weather volume battery kernel"
 
 DELAY="0.05"
 
