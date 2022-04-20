@@ -31,6 +31,7 @@ alias neofetch="neofetch --ascii_colors 3 3"
 alias e="$EDITOR"
 alias p="sudo pacman"
 alias s="startx"
+alias sudoe="sudo -E -s nvim"
 
 alias ..="cd .."
 alias ...="cd ../.."
