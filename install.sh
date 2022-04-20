@@ -13,7 +13,9 @@ echo -e "Downloading packages from the official arch repositories"
 echo -e "----------\n"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code alacritty exa git openssh neofetch xorg python python-pip nodejs dmenu && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code alacritty exa git openssh neofetch xorg dmenu && sudo -k
+# Pacman installs for bloat lmao
+echo $passvar | sudo -S pacman -Syu --noconfirm nodejs python python-pip gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
@@ -76,3 +78,8 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki code-minimap
+
+echo -e "----------"
+echo -e "Extras"
+echo -e "----------\n"
+echo $passvar | sudo -SH pip install --upgrade youtube-dl
