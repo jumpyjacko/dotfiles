@@ -1,0 +1,15 @@
+return {
+  NeoTreeDirectoryIcon = { fg = C.blue },
+  NeoTreeRootName = { fg = C.fg, bold = true },
+  NeoTreeFileName = { fg = C.fg },
+  NeoTreeFileIcon = { fg = C.fg },
+  NeoTreeFileNameOpened = { fg = C.green },
+  NeoTreeIndentMarker = { fg = C.blue_3 },
+  NeoTreeGitAdded = { fg = C.green },
+  NeoTreeGitConflict = { fg = C.red },
+  NeoTreeGitModified = { fg = C.orange },
+  NeoTreeGitUntracked = { fg = C.yellow },
+  NeoTreeNormal = { bg = C.bg },
+  NeoTreeNormalNC = { bg = C.bg },
+  NeoTreeSymbolicLinkTarget = { fg = C.cyan },
+}

@@ -18,17 +18,13 @@ PROMPT="%F{7}[%f%F{193}%n%f%F{217}@%f%F{152}%m%f %~%F{7}\$vcs_info_msg_0_%f%F{7}
 # Adding fish-like auto-suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Node Version Manager
-source /usr/share/nvm/init-nvm.sh
-
 # Adding alias for git bare .dotfile storage
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
 alias ls="exa -la --git --group-directories-first"
-alias neofetch="neofetch --ascii_colors 3 3"
+alias neofetch="neofetch --ascii_colors 2 2"
 
-alias e="$EDITOR"
 alias p="sudo pacman"
 alias s="startx"
 alias sudoe="sudo -E -s nvim"

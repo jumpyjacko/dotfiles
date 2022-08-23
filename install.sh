@@ -77,9 +77,4 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 cd ..
-paru -Syu --noconfirm nerd-fonts-mononoki code-minimap
-
-echo -e "----------"
-echo -e "Extras"
-echo -e "----------\n"
-echo $passvar | sudo -SH pip install --upgrade youtube-dl
+paru -Syu --noconfirm nerd-fonts-mononoki

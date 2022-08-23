@@ -2,46 +2,46 @@
 
 LOCATION=`curl -s wttr.in/?format=%l`
 
-YELLOW='\033[1;33m'
+GREEN='\033[1;32m'
 RED='\033[0;31m'
 NC='\033[0;0m'
 
-echo -e "${YELLOW}Weather${NC}: ${LOCATION}\n"
+echo -e "${GREEN}Weather${NC}: ${LOCATION}\n"
 curl -s 'wttr.in/?0?Q'
 
 echo ""
 
-echo -e "${YELLOW}Current Login${NC}: "
+echo -e "${GREEN}Current Login${NC}: "
 
 CURR_NAME=`last | sed '1!d' | sed '1 s/ .*//'`
 CURR_SYS=`last | sed '2!d' | awk '{ print $4 }'`
 CURR_START=`last | sed '2!d' | awk '{ print $5,$6,$7,$8 }'`
 
-echo -e "    ${YELLOW}${CURR_NAME}${NC}: "
-echo -e "        ${YELLOW}System Version${NC}: ${CURR_SYS}"
-echo -e "        ${YELLOW}Start Time${NC}: ${CURR_START}"
+echo -e "    ${GREEN}${CURR_NAME}${NC}: "
+echo -e "        ${GREEN}System Version${NC}: ${CURR_SYS}"
+echo -e "        ${GREEN}Start Time${NC}: ${CURR_START}"
 
 if [[ `uptime | awk '$3 ~ /:/ { print "true" }'` == 'true' ]]; then
     CURR_UP_HR=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f1`
     CURR_UP_MIN=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f2`
-    echo -e "        ${YELLOW}Uptime${NC}: ${RED}${CURR_UP_HR}${NC} hr, ${RED}${CURR_UP_MIN}${NC} min"
+    echo -e "        ${GREEN}Uptime${NC}: ${RED}${CURR_UP_HR}${NC} hr, ${RED}${CURR_UP_MIN}${NC} min"
 else
     CURR_UP_MIN=`uptime | awk '{ print $3 }'`
-    echo -e "        ${YELLOW}Uptime${NC}: ${RED}${CURR_UP_MIN}${NC} min"
+    echo -e "        ${GREEN}Uptime${NC}: ${RED}${CURR_UP_MIN}${NC} min"
 fi
 
 
 echo ""
 
-echo -e "${YELLOW}Last Login${NC}: "
+echo -e "${GREEN}Last Login${NC}: "
 
 LAST_NAME=`last | sed '3!d' | sed '1 s/ .*//'`
 LAST_SYS=`last | sed '4!d' | awk '{ print $4 }'`
 LAST_START=`last | sed '4!d' | awk '{ print $5,$6,$7,$8 }'`
 
-echo -e "    ${YELLOW}${LAST_NAME}${NC}: "
-echo -e "        ${YELLOW}System Version${NC}: ${LAST_SYS}"
-echo -e "        ${YELLOW}Start Time${NC}: ${LAST_START}"
+echo -e "    ${GREEN}${LAST_NAME}${NC}: "
+echo -e "        ${GREEN}System Version${NC}: ${LAST_SYS}"
+echo -e "        ${GREEN}Start Time${NC}: ${LAST_START}"
 
 echo ""
 
@@ -53,7 +53,7 @@ function ProgressBar {
     _fill=$(printf "%${_done}s")
     _empty=$(printf "%${_left}s")
 
-    printf "\r${YELLOW}${3}${NC}: [${YELLOW}${_fill// /=}${NC}${_empty// / }] ${_progress}%% Used\n"
+    printf "\r${GREEN}${3}${NC}: [${GREEN}${_fill// /=}${NC}${_empty// / }] ${_progress}%% Used\n"
 }
 
 _used=`df --total | sed '/total/!d' | awk '{ print $3 }'`
@@ -64,7 +64,7 @@ _free_as_gb=`df -h --total | sed '/total/!d' | awk '{ print $4 }'`
 
 ProgressBar ${_used} ${_free} Storage
 
-echo -e "    ${YELLOW}Used${NC}: ${_used_as_gb} of ${_free_as_gb}"
+echo -e "    ${GREEN}Used${NC}: ${_used_as_gb} of ${_free_as_gb}"
 
 echo ""
 
@@ -76,8 +76,8 @@ _mem_free_as_gb=`free -h | sed '/Mem/!d' | awk '{ print $2 }'`
 
 ProgressBar ${_mem_used} ${_mem_free} ' Memory'
 
-echo -e "    ${YELLOW}Used${NC}: ${_mem_used_as_gb} of ${_mem_free_as_gb}"
+echo -e "    ${GREEN}Used${NC}: ${_mem_used_as_gb} of ${_mem_free_as_gb}"
 
 echo ""
 
-echo -e "${YELLOW}MOTD Displayed at${NC}: `date +%d-%m-%Y` `date +%T`"
+echo -e "${GREEN}MOTD Displayed at${NC}: `date +%d-%m-%Y` `date +%T`"
