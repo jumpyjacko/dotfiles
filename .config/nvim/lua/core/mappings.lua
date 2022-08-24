@@ -14,16 +14,6 @@ maps.n["n"] = { "j" }
 maps.n["e"] = { "k" }
 maps.n["i"] = { "l" }
 
--- maps.x["h"] = { "h" }
--- maps.x["n"] = { "j" }
--- maps.x["e"] = { "k" }
--- maps.x["i"] = { "l" }
-
--- maps.o["h"] = { "h" }
--- maps.o["n"] = { "j" }
--- maps.o["e"] = { "k" }
--- maps.o["i"] = { "l" }
-
 -- Words forward/backward
 maps.n["l"] = { "b" }
 maps.n["L"] = { "B" }
@@ -31,23 +21,6 @@ maps.n["u"] = { "e" }
 maps.n["U"] = { "E" }
 maps.n["y"] = { "w" }
 maps.n["Y"] = { "W" }
-
--- maps.x["l"] = { "b" }
--- maps.x["L"] = { "B" }
--- maps.x["u"] = { "e" }
--- maps.x["U"] = { "E" }
--- maps.x["y"] = { "w" }
--- maps.x["Y"] = { "W" }
-
--- maps.o["l"] = { "b" }
--- maps.o["L"] = { "B" }
--- maps.o["u"] = { "e" }
--- maps.o["U"] = { "E" }
--- maps.o["y"] = { "w" }
--- maps.o["Y"] = { "W" }
-
--- maps.c["<C-L>"] = { "<C-Left>" }
--- maps.c["<C-Y>"] = { "<C-Right>" }
 
 -- Insert/Replace/append
 maps.n["s"] = { "i" }
@@ -58,9 +31,6 @@ maps.n["T"] = { "A" }
 -- Change
 maps.n["w"] = { "c" }
 maps.n["W"] = { "C" }
-
--- maps.x["w"] = { "c" }
--- maps.x["W"] = { "C" }
 
 maps.n["ww"] = { "cc" }
 
@@ -74,31 +44,15 @@ maps.n["V"] = { "P" }
 maps.n["gv"] = { "gp" }
 maps.n["gV"] = { "gP" }
 
--- maps.x["x"] = { "d" }
--- maps.x["c"] = { "y" }
--- maps.x["v"] = { "p" }
--- maps.x["X"] = { "d" }
--- maps.x["C"] = { "y" }
--- maps.x["V"] = { "P" }
--- maps.x["gv"] = { "gp" }
--- maps.x["gV"] = { "gP" }
-
 -- Undo/redo
 maps.n["z"] = { "u" }
 maps.n["gz"] = { "U" }
 maps.n["Z"] = { "<C-R>" }
 
--- maps.x["z"] = { ":<C-U>undo<CR>" }
--- maps.x["gz"] = { ":<C-U>undo<CR>" }
--- maps.x["Z"] = { ":<C-U>redo<CR>" }
-
 -- Visual
 maps.n["a"] = { "v" }
 maps.n["A"] = { "V" }
 maps.n["ga"] = { "gv" }
-
--- maps.x["a"] = { "v" }
--- maps.x["A"] = { "V" }
 
 -- Windows
 maps.n["<C-W>h"] = { "<C-W>h" }
@@ -106,13 +60,7 @@ maps.n["<C-W>n"] = { "<C-W>j" }
 maps.n["<C-W>e"] = { "<C-W>k" }
 maps.n["<C-W>i"] = { "<C-W>l" }
 
--- maps.x["<C-W>h"] = { "<C-W>h" }
--- maps.x["<C-W>n"] = { "<C-W>j" }
--- maps.x["<C-W>e"] = { "<C-W>k" }
--- maps.x["<C-W>i"] = { "<C-W>l" }
-
 -- Normal -
-
 -- Standard Operations
 maps.n["<leader>w"] = { "<cmd>w<cr>", desc = "Save" }
 maps.n["<leader>q"] = { "<cmd>q<cr>", desc = "Quit" }
@@ -293,7 +241,7 @@ maps.v[">"] = { ">gv", desc = "indent line" }
 
 -- Improved Terminal Mappings
 maps.t["<esc>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
-maps.t["jk"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
+maps.t["NE"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
 maps.t["<C-h>"] = { "<c-\\><c-n><c-w>h", desc = "Terminal left window navigation" }
 maps.t["<C-j>"] = { "<c-\\><c-n><c-w>j", desc = "Terminal down window navigation" }
 maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" }

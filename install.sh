@@ -15,7 +15,7 @@ echo -e "----------\n"
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git openssh neofetch xorg dmenu && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Syu --noconfirm nodejs python python-pip gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
@@ -30,8 +30,7 @@ echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fc
 # and pick number 2 when prompted to install noto-fonts instead of gnu-free-fonts.
 
 # Note 2:
-# Remember to run :PlugInstall and :CocInsatll <langauge servers, check coc-nvim github>
-# after opening neovim
+# run nvim +PackerSync
 
 echo -e "----------"
 echo -e "Downloading and setting up dotfiles git bare repository"
@@ -78,3 +77,6 @@ cd paru
 makepkg -si --noconfirm
 cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki
+
+# More notes:
+# add export QT_QPA_PLATFORMTHEME=qt5ct
