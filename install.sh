@@ -79,4 +79,4 @@ cd ..
 paru -Syu --noconfirm nerd-fonts-mononoki
 
 # More notes:
-# add export QT_QPA_PLATFORMTHEME=qt5ct
+# add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
