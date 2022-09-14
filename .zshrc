@@ -35,8 +35,8 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
-# Specifically made for the HP Spectre laptop because it has an OLED display
-alias brightness='xrandr --output eDP1 --brightness'
+# Specifically made for the HP Spectre laptop because it has an OLED display (trying out haikarainen/light)
+# alias brightness='xrandr --output eDP1 --brightness'
 
 # Aliases for my fun shell scripts
 alias wt="~/shell_scripts/weather"

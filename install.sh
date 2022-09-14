@@ -13,7 +13,7 @@ echo -e "Downloading packages from the official arch repositories"
 echo -e "----------\n"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git openssh neofetch xorg dmenu && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu && sudo -k
 # Pacman installs for bloat lmao
 echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
