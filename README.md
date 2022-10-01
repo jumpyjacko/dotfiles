@@ -21,3 +21,6 @@ rm install1.sh
 ```
 
 ## Gallery
+![clean_desktop](./Images/clean_desktop.png)
+![desktop](./Images/desktop.png)
+![neovim](./Images/neovim.png)
