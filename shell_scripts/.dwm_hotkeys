@@ -17,7 +17,7 @@
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
  ║ Change Stack Focus (up/down) ║ \u001b[31m{S*}\u001b[0m+n/e        ║ Set Layout (Centered Master) ║ \u001b[31m{S*}\u001b[0m+u       ║ Go to Tag (1-5)          ║ \u001b[31m{S*}\u001b[0m+1-5      ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
- ║ Set Master Stack Factor      ║ \u001b[31m{S*}\u001b[0m+h/i        ║ Set Layout                   ║ \u001b[31m{S*}\u001b[0m+o       ║ Quit DWM                 ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+q  ║
+ ║ Resize Current Master/Stack  ║ \u001b[31m{S*}\u001b[0m+h/i        ║ Set Layout                   ║ \u001b[31m{S*}\u001b[0m+o       ║ Quit DWM                 ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+q  ║
  ║                              ║                 ║ (Centered Master Floating)   ║              ║                          ║               ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
  ║ Move Stack (up/down)         ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+n/e  ║ Set Layout (Grid)            ║ \u001b[31m{S*}\u001b[0m+g       ║ Hotkey Helper            ║ \u001b[31m{S*}\u001b[0m+\u001b[33mCtrl\u001b[0m+h   ║
