@@ -13,6 +13,10 @@ maps.n["h"] = { "h" }
 maps.n["n"] = { "j" }
 maps.n["e"] = { "k" }
 maps.n["i"] = { "l" }
+maps.v["h"] = { "h" }
+maps.v["n"] = { "j" }
+maps.v["e"] = { "k" }
+maps.v["i"] = { "l" }
 
 -- Words forward/backward
 maps.n["l"] = { "b" }
@@ -43,6 +47,14 @@ maps.n["C"] = { "yy" }
 maps.n["V"] = { "P" }
 maps.n["gv"] = { "gp" }
 maps.n["gV"] = { "gP" }
+maps.v["x"] = { "x" }
+maps.v["c"] = { "y" }
+maps.v["v"] = { "p" }
+maps.v["X"] = { "dd" }
+maps.v["C"] = { "yy" }
+maps.v["V"] = { "P" }
+maps.v["gv"] = { "gp" }
+maps.v["gV"] = { "gP" }
 
 -- Undo/redo
 maps.n["z"] = { "u" }
