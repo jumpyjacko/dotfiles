@@ -15,7 +15,7 @@ echo -e "----------\n"
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip btop zathura pandoc maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
