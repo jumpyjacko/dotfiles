@@ -15,7 +15,7 @@ echo -e "----------\n"
 # Pacman installs
 echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip btop zathura pandoc maim qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip btop zathura pandoc maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
@@ -69,6 +69,18 @@ echo -e "----------\n"
 
 # Set zsh things
 echo $passvar | chsh -s /usr/bin/zsh
+
+echo -e "----------"
+echo -e "Downloading and installing ly"
+echo -e "----------\n"
+
+git clone --recurse-submodules https://github.com/jumpyjacko/ly
+cd ly
+make
+make install systemd
+echo $passvar | sudo -S systemctl enable ly.service
+echo $passvar | sudo -S systemctl disable getty@tty2.service
+cd ..
 
 echo -e "----------"
 echo -e "Downloading and installing paru as well as extra packages"
