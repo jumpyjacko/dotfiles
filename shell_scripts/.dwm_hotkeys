@@ -30,5 +30,5 @@
  ║ Toggle Window between Master ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+\u001b[97mEnter\u001b[0m║ Toggle Stack Windows         ║ \u001b[31m{S*}\u001b[0m+r       ║ Resize a Floating Window ║ \u001b[31m{S*}\u001b[0m+LClick   ║
  ║ and Stack                    ║                 ║ to Master Width              ║              ║                          ║               ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
- ║ Tag Quick Switch             ║ \u001b[31m{S*}\u001b[0m+Tab        ║ Kill Window                  ║ \u001b[31m{S*}\u001b[0m+w       ║                          ║               ║
+ ║ Tag Quick Switch             ║ \u001b[31m{S*}\u001b[0m+Tab        ║ Kill Window                  ║ \u001b[31m{S*}\u001b[0m+w       ║ Take a Screenshot        ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+s  ║
  ╚══════════════════════════════╩═════════════════╩══════════════════════════════╩══════════════╩══════════════════════════╩═══════════════╝

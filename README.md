@@ -14,7 +14,9 @@ I also use my fork of thytom/dwmbar at [this repository](https://github.com/Jump
 ## Installation (from clean install)
 Get and run `install.sh` script. (Requires no input until end of script where `paru` is being compiled)
 ```bash
-curl -LJo install1.sh https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh && bash ./install1.sh
+curl -LJo install1.sh https://raw.githubusercontent.com/JumpyJacko/dotfiles/main/install.sh
+# cat or whatever out install1.sh just to make sure its correct
+bash ./install1.sh
 
 # After the script is done
 rm install1.sh
