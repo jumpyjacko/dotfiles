@@ -74,13 +74,8 @@ echo -e "----------"
 echo -e "Downloading and installing ly"
 echo -e "----------\n"
 
-git clone --recurse-submodules https://github.com/jumpyjacko/ly
-cd ly
-make
-make install systemd
-echo $passvar | sudo -S systemctl enable ly.service
-echo $passvar | sudo -S systemctl disable getty@tty2.service
-cd ..
+# Do this after the install (look at the instructions on the github)
+# git clone --recurse-submodules https://github.com/jumpyjacko/ly
 
 echo -e "----------"
 echo -e "Downloading and installing paru as well as extra packages"
