@@ -34,8 +34,8 @@ if [ "$TERM" = "linux" ]; then
   echo -en "\e]PDB294BB"
   echo -en "\e]P65E8D87"
   echo -en "\e]PE8ZBEB7"
-  echo -en "\e]P7707880"
-  echo -en "\e]PFC5C8C6"
+  echo -en "\e]P7BEBEBE"
+  echo -en "\e]PFFFFFFF"
   clear
 fi
 
