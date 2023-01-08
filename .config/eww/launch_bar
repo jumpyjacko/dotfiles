@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FILE="$HOME/.cache/eww_launch.xyz"
+EWW="$HOME/.local/bin/eww/eww -c $HOME/.config/eww"
+
+if [[ ! `pidof eww` ]]; then
+  ${EWW} daemon
+  sleep 1
+fi
+
+run_eww() {
+  ${EWW} open-many \
+    bar
+}
+
+if [[ ! -f "$FILE" ]]; then
+  touch "$FILE"
+  run_eww
+else
+  ${EWW} close-all && killall eww
+  rm "$FILE"
+fi
