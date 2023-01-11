@@ -1,0 +1,41 @@
+#!/bin/bash
+
+calendar() {
+LOCK_FILE="$HOME/.cache/eww-calendar.lock"
+
+run() {
+  eww -c $HOME/.config/eww open calendar
+}
+
+if [[ ! -f "$LOCK_FILE" ]]; then
+  ${EWW_BIN} -c $HOME/.config/eww close weather
+  touch "$LOCK_FILE"
+  run && echo "good"
+else
+  eww -c $HOME/.config/eww close calendar
+  rm "$LOCK_FILE" && echo "closed"
+fi
+}
+
+weather() {
+LOCK_FILE="$HOME/.cache/eww-weather.lock"
+
+run() {
+  eww -c $HOME/.config/eww open weather_forecast
+}
+
+if [[ ! -f "$LOCK_FILE" ]]; then
+  ${EWW_BIN} -c $HOME/.config/eww close weather_forecast
+  touch "$LOCK_FILE"
+  run && echo "good"
+else
+  eww -c $HOME/.config/eww close weather_forecast
+  rm "$LOCK_FILE" && echo "closed"
+fi
+}
+
+if [ "$1" = "calendar" ]; then
+calendar
+elif [ "$1" = "weather" ]; then
+weather
+fi

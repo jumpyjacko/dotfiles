@@ -1,14 +1,29 @@
+(defpoll clock_time   :interval "5m"  "date +\%H")
+(defpoll clock_minute :interval "5s"  "date +\%M")
+(defpoll clock_date   :interval "10h" "date '+%d/%m'")
+
+(defpoll calendar_day  :interval "20h" "date '+%d'")
+(defpoll calendar_year :interval "20h" "date '+%Y'")
+
+(defpoll weather :interval "1m" "curl -s 'wttr.in/?format=%C+%t'")
+
+(defpoll wt_big :interval "30m" "curl -s 'wttr.in/?0?q?T'")
+
+(defpoll kernel_ver :interval "20h" "uname -r")
+
 (deflisten workspace "scripts/workspace")
+
+(defvar eww "eww -c $HOME/.config/eww")
 
 (defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "0px"
                       :width "100%"
-                      :height "40px"
+                      :height "44px"
                       :anchor "top center")
   :stacking "fg"
-  :reserve (struts :distance "40px" :side "top")
+  :reserve (struts :distance "44px" :side "top")
   :windowtype "dock"
   :wm-ignore true 
   (bar_1)
@@ -17,18 +32,127 @@
 (defwidget bar_1 []
   (box :class "bar_class"
        :orientation "h"
-  "test"
+    (left)
+    (middle)
+    (right)
   )
 )
 
 (defwidget left []
-  (box :horientation "h"
+  (box :orientation "horizontal"
        :space-evenly false
        :halign "start"
        :class "left_modules"
-  (workspaces)
+    "placeholder"
+  )
 )
 
-(defwidget workspaces []
-  (literal :content workspace)
+(defwidget middle []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "center"
+       :class "middle_modules"
+    (time)
+  )
 )
+
+(defwidget right []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "end"
+       :class "right_modules"
+    (weather)
+    (sep)
+    (kernel)
+  )
+)
+
+(defwidget sep []
+  (box :class "module-2"
+       :vexpand false
+       :hexpand false
+    (label :class "separ"
+           :text "|"
+    )
+  )
+)
+
+(defwidget time []
+  (box :class "module"
+       :space-evenly false
+       :orientation "horizontal"
+       :spacing "3"
+    (label :text clock_time :class "clock_time_class")
+    (label :text ":" :class "clock_time_sep")
+    (label :text clock_minute :class "clock_minute_class")
+    (sep)
+    (button :class "clock_date_class"
+            :onclick "$HOME/.config/eww/scripts/popups calendar" clock_date
+    )
+  )
+)
+
+(defwidget cal []
+  (box :class "cal"
+       :orientation "vertical"
+    (box :class "cal-in"
+      (calendar :class "cal"
+              :day calendar_day
+              :year calendar_year
+      )
+    )
+  )
+)
+
+(defwindow calendar
+  :geometry (geometry :x "0%"
+                      :y "44px"
+                      :anchor "top center"
+                      :width "270px"
+                      :height "60px"
+  )
+  (cal)
+)
+
+(defwidget kernel []
+  (box :class "kernel"
+       :vexpand false
+       :hexapnd false
+    (label :text kernel_ver)
+  )
+)
+
+(defwidget weather []
+  (box :class "weather"
+       :vexpand false
+       :hexapnd false
+    (button :class "weather"
+            :onclick "$HOME/.config/eww/scripts/popups weather" weather)
+  )
+)
+
+(defwidget wt_fore []
+  (box :class "wt_fore"
+       :vexpand false
+       :hexapnd false
+       :orientation "vertical"
+    (box :class "wt_fore_in"
+      (label :text wt_big)
+    )
+  )
+)
+
+(defwindow weather_forecast
+  :geometry (geometry :x "-150px"
+                      :y "44px"
+                      :anchor "top right"
+                      :width "270px"
+                      :height "270px"
+  )
+  (wt_fore)
+)
+
+; (defwidget workspaces []
+;   (literal :content workspace)
+; )
+
