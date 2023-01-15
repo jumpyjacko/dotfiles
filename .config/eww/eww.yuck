@@ -10,8 +10,11 @@
 (defpoll wt_big :interval "30m" "curl -s 'wttr.in/?0?q?T'")
 
 (defpoll kernel_ver :interval "20h" "uname -r")
+(defpoll battery :interval "30s" "$HOME/.config/eww/scripts/battery")
+(defpoll backlight :interval "30s" "$HOME/.config/eww/scripts/backlight")
 
-(deflisten workspace "scripts/workspace")
+(deflisten workspaces :initial "[]" "bash $HOME/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash $HOME/.config/eww/scripts/get-active-workspace")
 
 (defvar eww "eww -c $HOME/.config/eww")
 
@@ -43,7 +46,7 @@
        :space-evenly false
        :halign "start"
        :class "left_modules"
-    "placeholder"
+    (workspaces)
   )
 )
 
@@ -61,6 +64,10 @@
        :space-evenly false
        :halign "end"
        :class "right_modules"
+    (backlight)
+    (sep)
+    (battery)
+    (sep)
     (weather)
     (sep)
     (kernel)
@@ -152,7 +159,34 @@
   (wt_fore)
 )
 
-; (defwidget workspaces []
-;   (literal :content workspace)
-; )
+(defwidget battery []
+  (box :class "battery"
+       :vexpand false
+       :hexpand false
+    (label :text battery)
+  )
+)
 
+
+(defwidget backlight []
+  (box :class "backlight"
+       :vexpand false
+       :hexpand false
+    (label :text backlight)
+  )
+)
+
+(defwidget workspaces []
+  (eventbox :onscroll "bash $HOME/.config/eww/scripts/change-active-workspace {} ${current_workspace}"
+            :class "workspaces-widget"
+    (box :space-evenly true
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}")
+          )
+        )
+      )
+    )
+  )
+)
