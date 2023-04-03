@@ -13,7 +13,7 @@ echo -e "Downloading packages from the official arch repositories"
 echo -e "----------\n"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
 # Pacman installs for bloat lmao
 echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
@@ -85,8 +85,19 @@ echo -e "----------\n"
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
-cd ..
-paru -Syu --noconfirm nerd-fonts-mononoki
+
+# Installing font
+curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Mononoki.zip 
+unzip -a Mononoki.zip
+echo $passvar | sudo -S mkdir /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Bold.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Bold Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Bold.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Bold Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
+echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
+find -name '*Mononoki*' -delete
 
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
