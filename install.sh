@@ -87,6 +87,7 @@ cd paru
 makepkg -si --noconfirm
 
 # Installing font
+cd ~
 curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Mononoki.zip 
 unzip -a Mononoki.zip
 echo $passvar | sudo -S mkdir /usr/share/fonts/"mononoki Nerd Font"
@@ -98,6 +99,8 @@ echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Italic.ttf" /usr/
 echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
 echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
 find -name '*Mononoki*' -delete
+rm readme.md
+rm LICENSE.txt
 
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
