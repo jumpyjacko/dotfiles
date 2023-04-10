@@ -13,7 +13,7 @@ echo -e "Downloading packages from the official arch repositories"
 echo -e "----------\n"
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
+echo $passvar | sudo -S pacman -Syu --noconfirm coreutils feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
 # Pacman installs for bloat lmao
 echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
@@ -104,3 +104,8 @@ rm LICENSE.txt
 
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
+#
+# Hyprland:
+# run these two commands (and hopefully it works)
+# sudo pacman -S qt5-wayland qt6-wayland hyprland
+# paru -S hyprpaper hyprpicker-git eww-wayland
