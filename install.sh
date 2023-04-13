@@ -46,6 +46,9 @@ git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
 # About the dotfiles:
 # Remember to set up the git ssh key after running this script
 
+git clone --depth 1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
+git clone https://github.com/JumpyJacko/astronvim_user.git ~/.config/nvim/lua/user
+
 echo -e "----------"
 echo -e "Downloading and install dwm and it's extras"
 echo -e "----------\n"
