@@ -17,7 +17,7 @@ echo $passvar | sudo -S pacman -Syu --noconfirm
 # Pacman installs
 echo $passvar | sudo -S pacman -Sy --noconfirm base-devel feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip rustup jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Sy --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
@@ -72,6 +72,9 @@ echo $passvar | chsh -s /usr/bin/zsh
 echo -e "\n----------"
 echo -e "paru Install"
 echo -e "----------\n"
+
+rustup toolchain install stable nightly
+rustup default nightly
 
 # Paru install + what needs to be installed
 git clone https://aur.archlinux.org/paru.git
