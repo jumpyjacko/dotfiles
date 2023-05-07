@@ -8,16 +8,18 @@ read -sp 'Sudoers Password (To reduce the amount of inputs to install): ' passva
 # Move to home directory, just to make sure you are already there
 cd ~
 
-echo -e "----------"
-echo -e "Downloading packages from the official arch repositories"
+echo -e "\n----------"
+echo -e "Package Installs"
 echo -e "----------\n"
 
+echo $passvar | sudo -S pacman -Syu --noconfirm
+
 # Pacman installs
-echo $passvar | sudo -S pacman -Syu --noconfirm base-devel feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
+echo $passvar | sudo -S pacman -Sy --noconfirm base-devel feh zsh pamixer neovim code kitty exa git light openssh neofetch xorg dmenu unzip && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Syu --noconfirm nodejs npm python python-pip jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
-echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
+echo $passvar | sudo -S pacman -Sy --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
 # Note:
 # About using bpytop and other fancy sys-monitors, braille characters will not render correctly due to
@@ -29,14 +31,8 @@ echo $passvar | sudo -S pacman -Syu --noconfirm fcitx5-mozc fcitx5-configtool fc
 # sudo pacman -S firefox
 # and pick number 2 when prompted to install noto-fonts instead of gnu-free-fonts.
 
-# Note 2:
-# run nvim +PackerSync
-
-# Note 3:
-# Reminder to set Zathura to be the default PDF viewer (see Arch Wiki)
-
-echo -e "----------"
-echo -e "Downloading and setting up dotfiles git bare repository"
+echo -e "\n----------"
+echo -e "dotfiles Setup"
 echo -e "----------\n"
 
 # Preparing the dotfiles repository
@@ -49,8 +45,8 @@ git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
 git clone https://github.com/JumpyJacko/astronvim_user.git ~/.config/nvim/lua/user
 
-echo -e "----------"
-echo -e "Downloading and install dwm and it's extras"
+echo -e "\n----------"
+echo -e "dwm Install"
 echo -e "----------\n"
 
 # dwm install
@@ -66,22 +62,15 @@ echo $passvar | sudo -S ./install.sh && sudo -k
 cd ..
 echo $passvar | sudo -S cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 
-echo -e "----------"
-echo -e "Setting zsh as default shell"
+echo -e "\n----------"
+echo -e "zsh Setup"
 echo -e "----------\n"
 
 # Set zsh things
 echo $passvar | chsh -s /usr/bin/zsh
 
-echo -e "----------"
-echo -e "Downloading and installing ly"
-echo -e "----------\n"
-
-# Do this after the install (look at the instructions on the github)
-# git clone --recurse-submodules https://github.com/jumpyjacko/ly
-
-echo -e "----------"
-echo -e "Downloading and installing paru as well as extra packages"
+echo -e "\n----------"
+echo -e "paru Install"
 echo -e "----------\n"
 
 # Paru install + what needs to be installed
@@ -104,6 +93,14 @@ echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Regular.ttf" /usr/shar
 find -name '*Mononoki*' -delete
 rm readme.md
 rm LICENSE.txt
+
+# Hyprland install
+echo -e "\n----------"
+echo -e "Hyprland Install"
+echo -e "----------\n"
+
+echo $passvar | sudo -S pacman -Sy --noconfirm hyprland qt5-wayland qt6-wayland
+paru -Syu --noconfirm hyprpaper hyprpicker-git eww-wayland
 
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
