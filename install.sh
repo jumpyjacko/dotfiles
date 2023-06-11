@@ -102,13 +102,8 @@ echo -e "\n----------"
 echo -e "Hyprland Install"
 echo -e "----------\n"
 
-echo $passvar | sudo -S pacman -Sy --noconfirm hyprland qt5-wayland qt6-wayland
+echo $passvar | sudo -S pacman -Sy --noconfirm hyprland qt5-wayland qt6-wayland polkit-kde-agent
 paru -Syu --noconfirm hyprpaper hyprpicker-git eww-wayland
 
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment
-#
-# Hyprland:
-# run these two commands (and hopefully it works)
-# sudo pacman -S qt5-wayland qt6-wayland hyprland
-# paru -S hyprpaper hyprpicker-git eww-wayland
