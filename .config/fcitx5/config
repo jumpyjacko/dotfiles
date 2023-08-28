@@ -3,6 +3,8 @@
 EnumerateWithTriggerKeys=True
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
+# Enumerate Input Method Group Forward
+EnumerateGroupForwardKeys=
 
 [Hotkey/TriggerKeys]
 0=Control+space
@@ -17,9 +19,6 @@ EnumerateSkipFirst=False
 
 [Hotkey/EnumerateBackwardKeys]
 0=Control+Shift_R
-
-[Hotkey/EnumerateGroupForwardKeys]
-0=Super+space
 
 [Hotkey/EnumerateGroupBackwardKeys]
 0=Shift+Super+space
@@ -62,6 +61,10 @@ CompactInputMethodInformation=True
 ShowFirstInputMethodInformation=True
 # Default page size
 DefaultPageSize=5
+# Override Xkb Option
+OverrideXkbOption=False
+# Custom Xkb Option
+CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
 # Force Disabled Addons
