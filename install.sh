@@ -81,6 +81,10 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 
+# Joshuto stuff
+paru -Sy --noconfirm joshuto
+echo $passvar | sudo -S pacman -Sy --noconfirm perl-image-exiftool unrar highlight
+
 # Installing font
 cd ~
 curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Mononoki.zip 

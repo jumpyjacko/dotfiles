@@ -44,7 +44,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
 alias ls="exa -la --git --group-directories-first"
+alias fm="joshuto"
 alias neofetch="neofetch --ascii_colors 2 2"
+alias tracert="traceroute"
 
 alias p="sudo pacman"
 alias s="startx"
