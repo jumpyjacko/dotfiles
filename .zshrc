@@ -45,6 +45,7 @@ fi
 
 # Adding alias for git bare .dotfile storage
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias lconfig='/usr/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
 alias ls="exa -la --git --group-directories-first"

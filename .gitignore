@@ -1,3 +1,14 @@
-.cfg
-.config/mozc/.session.ipc
-.config/fcitx5/conf/cached_layouts
+.cache/*
+.cargo/*
+.mozilla/*
+.local/*
+.npm/*
+.rustup/*
+.ssh/*
+.steam*
+.wine/*
+Downloads/
+dwm*
+
+.bash*
+
