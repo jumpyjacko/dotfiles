@@ -21,6 +21,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Editor Exports
 export EDITOR=nvim
 export VISUAL=nvim
+export BAT_THEME="Catppuccin-mocha"
 
 # Changing TTY colours
 if [ "$TERM" = "linux" ]; then
@@ -49,7 +50,7 @@ alias lconfig='/usr/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
 alias ls="exa -la --git --group-directories-first"
-alias cat="bat --paging=never"
+alias cat="bat --paging=never --decorations=never"
 alias fm="joshuto"
 alias lg="lazygit"
 alias neofetch="neofetch --ascii_colors 2 2"
