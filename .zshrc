@@ -18,6 +18,10 @@ PROMPT="%F{7}[%f%F{193}%n%f%F{217}@%f%F{152}%m%f %~%F{7}\$vcs_info_msg_0_%f%F{7}
 # Adding fish-like auto-suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Editor Exports
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Changing TTY colours
 if [ "$TERM" = "linux" ]; then
   echo -en "\e]P0000000"
@@ -44,6 +48,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
 alias ls="exa -la --git --group-directories-first"
+alias cat="bat --paging=never"
 alias fm="joshuto"
 alias neofetch="neofetch --ascii_colors 2 2"
 alias tracert="traceroute"
