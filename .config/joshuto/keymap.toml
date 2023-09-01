@@ -3,18 +3,18 @@
 keymap = [
   { keys = ["escape"], commands = ["escape"] },
   { keys = ["ctrl+t"], commands = ["new_tab"] },
-  { keys = ["alt+t"], commands = ["new_tab --cursor"] },
-  { keys = ["T"], commands = ["new_tab --current"] },
-  { keys = ["W"], commands = ["close_tab"] },
+  { keys = ["alt+t"],  commands = ["new_tab --cursor"] },
+  { keys = ["T"],      commands = ["new_tab --current"] },
+  { keys = ["W"],      commands = ["close_tab"] },
   { keys = ["ctrl+w"], commands = ["close_tab"] },
-  { keys = ["q"], commands = ["close_tab"] },
+  { keys = ["q"],      commands = ["close_tab"] },
   { keys = ["ctrl+c"], commands = ["quit"] },
-  { keys = ["Q"], commands = ["quit --output-current-directory"] },
+  { keys = ["Q"],      commands = ["quit --output-current-directory"] },
 
-  { keys = ["R"], commands = ["reload_dirlist"] },
-  { keys = ["z", "h"], commands = ["toggle_hidden"] },
-  { keys = ["ctrl+h"], commands = ["toggle_hidden"] },
-  { keys = ["\t"], commands = ["tab_switch 1"] },
+  { keys = ["R"],       commands = ["reload_dirlist"] },
+  { keys = ["z", "h"],  commands = ["toggle_hidden"] },
+  { keys = ["ctrl+h"],  commands = ["toggle_hidden"] },
+  { keys = ["\t"],      commands = ["tab_switch 1"] },
   { keys = ["backtab"], commands = ["tab_switch -1"] },
 
   { keys = ["alt+1"], commands = ["tab_switch_index 1"] },
@@ -34,13 +34,14 @@ keymap = [
   { keys = ["9"], commands = ["numbered_command 9"] },
 
   # vim-like keybindings
-  { keys = ["n"], commands = ["cursor_move_down"] },
-  { keys = ["e"], commands = ["cursor_move_up"] },
-  { keys = ["h"], commands = ["cd .."] },
-  { keys = ["i"], commands = ["open"] },
+  { keys = ["n"],      commands = ["cursor_move_down"] },
+  { keys = ["e"],      commands = ["cursor_move_up"] },
+  { keys = ["h"],      commands = ["cd .."] },
+  { keys = ["i"],      commands = ["open"] },
+  { keys = ["\n"],     commands = ["open"] },
   { keys = ["g", "g"], commands = ["cursor_move_home"] },
-  { keys = ["G"], commands = ["cursor_move_end"] },
-  { keys = ["r"], commands = ["open_with"] },
+  { keys = ["G"],      commands = ["cursor_move_end"] },
+  { keys = ["r"],      commands = ["open_with"] },
 
   { keys = ["H"], commands = ["cursor_move_page_home"] },
   { keys = ["L"], commands = ["cursor_move_page_middle"] },
@@ -76,22 +77,22 @@ keymap = [
   { keys = ["t"], commands = ["select --all=true --toggle=true"] },
   { keys = ["V"], commands = ["toggle_visual"] },
 
-  { keys = ["w"], commands = ["show_tasks --exit-key=w"] },
+  { keys = ["w"],      commands = ["show_tasks --exit-key=w"] },
   { keys = ["b", "b"], commands = ["bulk_rename"] },
-  { keys = ["="], commands = ["set_mode"] },
+  { keys = ["="],      commands = ["set_mode"] },
 
   { keys = [":"], commands = [":"] },
   { keys = [";"], commands = [":"] },
 
-  { keys = ["'"], commands = [":shell "] },
+  { keys = ["'"],      commands = [":shell "] },
   { keys = ["m", "k"], commands = [":mkdir "] },
   { keys = ["c", "w"], commands = [":rename "] },
 
-  { keys = ["/"], commands = [":search "] },
-  { keys = ["|"], commands = [":search_inc "] },
+  { keys = ["/"],  commands = [":search "] },
+  { keys = ["|"],  commands = [":search_inc "] },
   { keys = ["\\"], commands = [":search_glob "] },
-  { keys = ["S"], commands = ["search_fzf"] },
-  { keys = ["C"], commands = ["subdir_fzf"] },
+  { keys = ["S"],  commands = ["search_fzf"] },
+  { keys = ["C"],  commands = ["subdir_fzf"] },
 
   { keys = ["k"], commands = ["search_next"] },
   { keys = ["K"], commands = ["search_prev"] },
@@ -115,19 +116,19 @@ keymap = [
   { keys = ["g", "d"], commands = ["cd ~/Downloads"] },
   { keys = ["g", "e"], commands = ["cd /etc"] },
   { keys = ["g", "h"], commands = ["cd ~/"] },
-  { keys = ["?"], commands = ["help"] },
+  { keys = ["?"],      commands = ["help"] },
 ]
 
 [task_view]
 
 keymap = [
   # vim-like keybindings
-  { keys = ["n"], commands = ["cursor_move_down"] },
-  { keys = ["e"], commands = ["cursor_move_up"] },
+  { keys = ["n"],      commands = ["cursor_move_down"] },
+  { keys = ["e"],      commands = ["cursor_move_up"] },
   { keys = ["g", "g"], commands = ["cursor_move_home"] },
-  { keys = ["G"], commands = ["cursor_move_end"] },
+  { keys = ["G"],      commands = ["cursor_move_end"] },
 
-  { keys = ["w"], commands = ["show_tasks"] },
+  { keys = ["w"],      commands = ["show_tasks"] },
   { keys = ["escape"], commands = ["show_tasks"] },
 ]
 
@@ -135,11 +136,11 @@ keymap = [
 
 keymap = [
   # vim-like keybindings
-  { keys = ["n"], commands = ["cursor_move_down"] },
-  { keys = ["e"], commands = ["cursor_move_up"] },
+  { keys = ["n"],      commands = ["cursor_move_down"] },
+  { keys = ["e"],      commands = ["cursor_move_up"] },
   { keys = ["g", "g"], commands = ["cursor_move_home"] },
-  { keys = ["G"], commands = ["cursor_move_end"] },
+  { keys = ["G"],      commands = ["cursor_move_end"] },
 
-  { keys = ["w"], commands = ["show_tasks"] },
+  { keys = ["w"],      commands = ["show_tasks"] },
   { keys = ["escape"], commands = ["show_tasks"] },
 ]

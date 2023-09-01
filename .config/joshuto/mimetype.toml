@@ -13,6 +13,9 @@ image_default = [
   { command = "krita", args = [
     "--",
   ], fork = true, silent = true },
+  { command = "feh", args = [
+    "--",
+  ], fork = true, silent = true },
   { command = "exiftool", confirm_exit = true },
   { command = "swappy", args = [
     "-f",
@@ -32,14 +35,13 @@ video_default = [
 ]
 
 text_default = [
-  { command = "micro" },
-  { command = "gedit", fork = true, silent = true },
+  { command = "nvim" },
   { command = "bat", args = [
     "--paging=always",
   ] },
 ]
 
-reader_default = [{ command = "evince", fork = true, silent = true }]
+reader_default = [{ command = "zathura", fork = true, silent = true }]
 
 libreoffice_default = [{ command = "libreoffice", fork = true, silent = true }]
 
@@ -191,7 +193,7 @@ zip.app_list = [
 aup.app_list = [{ command = "audacity", fork = true, silent = true }]
 
 m3u.app_list = [
-  { command = "micro" },
+  { command = "nvim" },
   { command = "mpv" },
   { command = "gedit", fork = true, silent = true },
   { command = "bat", confirm_exit = true },
