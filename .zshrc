@@ -50,6 +50,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls="exa -la --git --group-directories-first"
 alias cat="bat --paging=never"
 alias fm="joshuto"
+alias lg="lazygit"
 alias neofetch="neofetch --ascii_colors 2 2"
 alias tracert="traceroute"
 
