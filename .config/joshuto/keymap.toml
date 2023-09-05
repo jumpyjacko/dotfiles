@@ -117,6 +117,8 @@ keymap = [
   { keys = ["g", "e"], commands = ["cd /etc"] },
   { keys = ["g", "h"], commands = ["cd ~/"] },
   { keys = ["?"],      commands = ["help"] },
+
+  { keys = ["l", "g"], commands = ["shell lazygit"] },
 ]
 
 [task_view]
