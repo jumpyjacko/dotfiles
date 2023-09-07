@@ -44,6 +44,9 @@ if [ "$TERM" = "linux" ]; then
   clear
 fi
 
+# Enabling ctrl+backspace
+bindkey "^H" backward-delete-word
+
 # Adding alias for git bare .dotfile storage
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lconfig='/usr/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
