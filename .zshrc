@@ -52,7 +52,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lconfig='/usr/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Aliases for convenience
-alias ls="exa -la --git --group-directories-first"
+alias ls="eza -la --git --group-directories-first"
 alias cat="bat --paging=never --decorations=never"
 alias fm="joshuto"
 alias lg="lazygit"
