@@ -81,9 +81,10 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
 
-# Joshuto stuff
 paru -Sy --noconfirm joshuto
 echo $passvar | sudo -S pacman -Sy --noconfirm perl-image-exiftool unrar highlight
+
+paru -Sy --noconfirm j4-dmenu-desktop
 
 # Installing font
 cd ~
