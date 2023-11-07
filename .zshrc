@@ -23,6 +23,22 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BAT_THEME="Catppuccin-mocha"
 
+# XDG Exports
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Recommended Exports from xdg-ninja
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
 # Changing TTY colours
 if [ "$TERM" = "linux" ]; then
   echo -en "\e]P0000000"
@@ -46,6 +62,12 @@ fi
 
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
+
+# pfetch config because i'm a degenerate who can't live without a fetch
+export PF_INFO="ascii title os kernel shell pkgs palette"
+export PF_COLOR=1
+export PF_COL1=7
+export PF_COL3=7
 
 # Adding alias for git bare .dotfile storage
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
