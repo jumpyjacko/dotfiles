@@ -102,6 +102,10 @@ find -name '*Mononoki*' -delete
 rm readme.md
 rm LICENSE.txt
 
+# Atuin install
+bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
+atuin import auto
+
 # Hyprland install
 echo -e "\n----------"
 echo -e "Hyprland Install"
