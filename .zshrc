@@ -80,6 +80,7 @@ alias fm="joshuto"
 alias lg="lazygit"
 alias neofetch="neofetch --ascii_colors 2 2"
 alias tracert="traceroute"
+alias serve="miniserve --index index.html --verbose --port 8080 & firefox http://localhost:8080"
 
 alias p="sudo pacman"
 alias s="startx"
@@ -91,7 +92,7 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
-# Specifically made for the HP Spectre laptop because it has an OLED display (trying out haikarainen/light)
+# Specifically made for the HP Spectre laptop because it has a strange display
 alias brightness='xrandr --output eDP1 --brightness'
 
 # Aliases for my fun shell scripts

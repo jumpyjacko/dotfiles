@@ -17,7 +17,7 @@ echo $passvar | sudo -S pacman -Syu --noconfirm
 # Pacman installs
 echo $passvar | sudo -S pacman -Sy --noconfirm base-devel feh zsh pamixer neovim code kitty exa bat git light openssh neofetch xorg xorg-server xorg-apps xorg-xinit dmenu dunst unzip && sudo -k
 # Pacman installs for bloat lmao
-echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip rustup jq socat btop zathura maim convert qt5ct adwaita-qt5 gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
+echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip rustup jq socat btop zathura maim convert qt5ct adwaita-qt5 miniserve gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
 echo $passvar | sudo -S pacman -Sy --noconfirm fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts && sudo -k
 
