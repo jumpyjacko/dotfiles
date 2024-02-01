@@ -80,7 +80,11 @@ alias fm="joshuto"
 alias lg="lazygit"
 alias neofetch="neofetch --ascii_colors 2 2"
 alias tracert="traceroute"
-alias serve="miniserve --index index.html --verbose --port 8080 & firefox http://localhost:8080"
+serve_alias() {
+  firefox http://localhost:8080 & disown
+  miniserve --index index.html --verbose --port 8080
+}
+alias serve="serve_alias"
 
 alias p="sudo pacman"
 alias s="startx"
