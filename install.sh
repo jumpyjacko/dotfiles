@@ -106,6 +106,10 @@ rm LICENSE.txt
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
 atuin import auto
 
+# Tmux install and configuration
+echo $passvar | sudo -S pacman -Sy tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Hyprland install
 echo -e "\n----------"
 echo -e "Hyprland Install"
