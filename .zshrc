@@ -102,6 +102,6 @@ alias brightness='xrandr --output eDP1 --brightness'
 # Aliases for my fun shell scripts
 alias wt="~/shell_scripts/weather"
 alias motd="~/shell_scripts/motd"
-alias dhotkeys="~/shell_scripts/dwm_hotkeys"
+alias change_volume="~/shell_scripts/change_volume"
 
 eval "$(atuin init zsh)"

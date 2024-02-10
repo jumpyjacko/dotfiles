@@ -1,0 +1,10 @@
+#!/bin/bash
+
+device_type=$(pactl list sinks | grep "Active Port:" | grep -v "HDMI" | awk -F'\\[Out\\] ' '{print $2}')
+
+# Echo the audio output device type
+if [ -n "$device_type" ]; then
+  echo $device_type
+else
+  echo "Unknown"
+fi

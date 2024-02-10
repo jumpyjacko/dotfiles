@@ -1,0 +1,38 @@
+#!/bin/bash
+# changeVolume
+
+# Arbitrary but unique message tag
+msgTag="computer_volume"
+
+# Specify the increment or decrement amount (you can adjust this as needed)
+increment_amount=5
+
+# Get the current volume and whether or not the speaker is muted
+current_volume=$(pamixer --get-volume)
+mute=$(pamixer --get-mute)
+
+# Check if the first argument is provided and is either "up" or "down"
+if [[ -n "$1" && ( "$1" == "up" || "$1" == "down" ) ]]; then
+    if [ "$1" == "up" ]; then
+        # Increment the volume
+        pamixer --increase $increment_amount
+    elif [ "$1" == "down" ]; then
+        # Decrement the volume
+        pamixer --decrease $increment_amount
+    fi
+fi
+
+# Get the updated volume after incrementing or decrementing
+updated_volume=$(pamixer --get-volume)
+
+# Get audio device type
+audio_device=$(~/shell_scripts/audio_device_type)
+
+if [[ $updated_volume == 0 || "$mute" == "true" ]]; then
+    # Show the sound muted notification
+    dunstify -a $audio_device -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Volume muted"
+else
+    # Show the volume notification
+    dunstify -a $audio_device -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
+    -h int:value:"$updated_volume" "Volume: ${updated_volume}%"
+fi

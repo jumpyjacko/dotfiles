@@ -1,0 +1,38 @@
+[global]
+  monitor = 0
+  follow = keyboard
+  width = 300
+  notification_limit = 5
+  origin = top-right
+  offset = 16x32
+  scale = 0
+
+  transparency = 0
+  gap_size = 5
+  padding = 8
+  horizontal_padding = 8
+  frame_width = 4
+  frame_color = "#bbbbbb"
+  separator_color = frame
+
+  highlight = "#c5c8c6"
+
+  font = mononoki Nerd Font 24 
+  format = "<b>%a - %s</b>\n%b"
+  icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices:/usr/share/icons/Adwaita/16x16/legacy
+
+[urgency_low]
+  background = "#1d1f21"
+  foreground = "#c5c8c6"
+  frame_color = "#444444"
+
+[urgency_normal]
+  background = "#1d1f21"
+  foreground = "#c5c8c6"
+  frame_color = "#bbbbbb"
+
+[urgency_critical]
+  background = "#1d1f21"
+  foreground = "#c5c8c6"
+  frame_color = "#cc6666"
+
