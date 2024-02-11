@@ -42,6 +42,30 @@ compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
 
+# Changing tty colours
+if [ "$TERM" = "linux" ]; then
+  /bin/echo -e "
+  \e]P01d1f21
+  \e]P1bf616a
+  \e]P2a3be8c
+  \e]P3ebcb8b
+  \e]P48fa1b3
+  \e]P5b48ead
+  \e]P696b5b4
+  \e]P7c5c8c6
+  \e]P865737e
+  \e]P9bf616a
+  \e]PAa3be8c
+  \e]PBebcb8b
+  \e]PC8fa1b3
+  \e]PDb48ead
+  \e]PE96b5b4
+  \e]PFeff1f5
+  "
+  # Get rid of artifacts
+  clear
+fi
+
 # pfetch config because i'm a degenerate who can't live without a fetch
 export PF_INFO="ascii title os kernel shell pkgs palette"
 export PF_COLOR=1
