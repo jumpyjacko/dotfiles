@@ -4,7 +4,7 @@
   width = 300
   notification_limit = 5
   origin = top-right
-  offset = 5x24
+  offset = 5x26
   scale = 0
 
   transparency = 0
@@ -33,6 +33,6 @@
 
 [urgency_critical]
   background = "#1d1f21"
-  foreground = "#c5c8c6"
-  frame_color = "#cc6666"
+  foreground = "#bf616a"
+  frame_color = "#bf616a"
 
