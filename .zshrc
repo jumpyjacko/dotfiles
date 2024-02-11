@@ -8,13 +8,13 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 
 # Formats vcs_info message
-zstyle ':vcs_info:git:*' formats ' %f%F{217}שׂ %f%F{193}%b'
+zstyle ':vcs_info:git:*' formats ' %f%F{1}שׂ %f%F{2}%b'
 
 # Enabling and setting custom prompt (thanks zsh prompt generator)
 autoload -Uz promptinit && promptinit
 setopt prompt_subst
-PROMPT="%F{7}[%f%F{193}%n%f%F{217}@%f%F{152}%m%f %~%F{7}\$vcs_info_msg_0_%f%F{7}]%f%F{7}$%f "
-RPROMPT=$'%F{7}%{\e[3m%}%* %?%{\e[0m%}%f'
+PROMPT="%F{8}[%f%F{2}%n%f%F{5}@%f%F{4}%m%f %~%F{8}\$vcs_info_msg_0_%f%F{8}]%f%F{8}$%f "
+RPROMPT=$'%F{8}[%f%?%F{8}] %{\e[3m%}%*%{\e[0m%}%f'
 
 # Adding fish-like auto-suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -47,6 +47,9 @@ export PF_INFO="ascii title os kernel shell pkgs palette"
 export PF_COLOR=1
 export PF_COL1=7
 export PF_COL3=7
+
+export BAT_THEME="ansi"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Adding alias for git bare .dotfile storage
 # TODO: Switch to a gnu stow method of dotfile management
