@@ -13,5 +13,5 @@ export GLFW_IM_MODULE=ibus
 fcitx5 &
 
 dwmbar &
-dnoted &
+dunst &
 exec dwm

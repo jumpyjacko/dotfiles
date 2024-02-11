@@ -1,0 +1,44 @@
+#!/bin/bash
+
+msg_tag="monitor_brightness"
+
+current_display=$(xrandr --listactivemonitors | awk 'NR==2{print $4}')
+current_brightness=$(xrandr --current --verbose | grep -i brightness | cut -f2 -d ' ')
+
+increment_value=0.05
+
+increment_brightness() {
+  new_brightness=$(echo "$current_brightness + $increment_value" | bc)
+  xrandr --output $current_display --brightness $new_brightness
+  pretty_brightness=$(printf "%.0f\n" $(echo "$new_brightness * 100" | bc))
+  
+  dunstify -a $current_display -u low -h string:x-dunst-stack-tag:$msg_tag \
+    -h int:value:"$pretty_brightness" "Brightness: ${pretty_brightness}%"
+}
+
+decrement_brightness() {
+  new_brightness=$(echo "$current_brightness - $increment_value" | bc)
+  xrandr --output $current_display --brightness $new_brightness
+  pretty_brightness=$(printf "%.0f\n" $(echo "$new_brightness * 100" | bc))
+  
+  dunstify -a $current_display -u low -h string:x-dunst-stack-tag:$msg_tag \
+    -h int:value:"$pretty_brightness" "Brightness: ${pretty_brightness}%"
+}
+
+if [ -z "$1" ]; then
+  exit 1
+fi
+
+case "$1" in
+  "inc")
+    increment_brightness
+    ;;
+  "dec")
+    decrement_brightness
+    ;;
+  *)
+    exit 1
+    ;;
+esac
+
+exit 0

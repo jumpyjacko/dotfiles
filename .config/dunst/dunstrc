@@ -4,7 +4,7 @@
   width = 300
   notification_limit = 5
   origin = top-right
-  offset = 16x32
+  offset = 5x24
   scale = 0
 
   transparency = 0
