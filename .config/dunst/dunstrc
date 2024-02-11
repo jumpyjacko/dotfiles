@@ -19,12 +19,12 @@
 
   font = mononoki Nerd Font 24 
   format = "<b>%a - %s</b>\n%b"
-  icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices:/usr/share/icons/Adwaita/16x16/legacy
 
 [urgency_low]
   background = "#1d1f21"
   foreground = "#c5c8c6"
   frame_color = "#444444"
+  timeout = 2
 
 [urgency_normal]
   background = "#1d1f21"
