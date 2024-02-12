@@ -9,6 +9,11 @@ increment_value=0.05
 
 increment_brightness() {
   new_brightness=$(echo "$current_brightness + $increment_value" | bc)
+
+  if (( $(echo "$new_brightness > 1.0" | bc -l) )); then
+    exit 1
+  fi
+  
   xrandr --output $current_display --brightness $new_brightness
   pretty_brightness=$(printf "%.0f\n" $(echo "$new_brightness * 100" | bc))
   
@@ -18,6 +23,11 @@ increment_brightness() {
 
 decrement_brightness() {
   new_brightness=$(echo "$current_brightness - $increment_value" | bc)
+  
+  if (( $(echo "$new_brightness <= 0.0" | bc -l) )); then
+    exit 1
+  fi
+
   xrandr --output $current_display --brightness $new_brightness
   pretty_brightness=$(printf "%.0f\n" $(echo "$new_brightness * 100" | bc))
   
