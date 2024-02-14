@@ -15,7 +15,7 @@ echo -e "----------\n"
 echo $passvar | sudo -S pacman -Syu --noconfirm
 
 # Pacman installs
-echo $passvar | sudo -S pacman -Sy --noconfirm base-devel feh zsh pamixer neovim code kitty exa bat git light openssh neofetch xorg xorg-server xorg-apps xorg-xinit dmenu dunst unzip bc && sudo -k
+echo $passvar | sudo -S pacman -Sy --noconfirm base-devel feh zsh pamixer neovim kitty eza bat zoxide git openssh xorg xorg-server xorg-apps xorg-xinit dmenu dunst unzip bc && sudo -k
 # Pacman installs for bloat lmao
 echo $passvar | sudo -S pacman -Sy --noconfirm nodejs npm python python-pip rustup jq socat btop zathura maim convert qt5ct adwaita-qt5 miniserve gstreamer gst-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 # Pacman installs for Japanese IME, check for additional configuration on ArchWiki
@@ -36,12 +36,14 @@ echo -e "dotfiles Setup"
 echo -e "----------\n"
 
 # Preparing the dotfiles repository
+# TODO: Switch to using gnu stow
 git clone --bare https://github.com/JumpyJacko/dotfiles.git $HOME/.cfg
 /usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME checkout
 
 # About the dotfiles:
 # Remember to set up the git ssh key after running this script
 
+# AstroNvim install
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
 git clone https://github.com/JumpyJacko/astronvim_user.git ~/.config/nvim/lua/user
 
@@ -111,12 +113,12 @@ echo $passvar | sudo -S pacman -Sy tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Hyprland install
-echo -e "\n----------"
-echo -e "Hyprland Install"
-echo -e "----------\n"
-
-echo $passvar | sudo -S pacman -Sy --noconfirm hyprland qt5-wayland qt6-wayland polkit-kde-agent
-paru -Syu --noconfirm hyprpaper hyprpicker-git eww-wayland
-
+# echo -e "\n----------"
+# echo -e "Hyprland Install"
+# echo -e "----------\n"
+#
+# echo $passvar | sudo -S pacman -Sy --noconfirm hyprland qt5-wayland qt6-wayland polkit-kde-agent
+# paru -Syu --noconfirm hyprpaper hyprpicker-git eww-wayland
+#
 # More notes:
 # add export QT_QPA_PLATFORMTHEME=qt5ct to /etc/environment

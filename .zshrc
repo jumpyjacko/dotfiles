@@ -112,3 +112,4 @@ alias motd="~/shell_scripts/motd"
 alias change_volume="~/shell_scripts/change_volume"
 
 eval "$(atuin init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
