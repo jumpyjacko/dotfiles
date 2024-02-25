@@ -2,7 +2,7 @@
 A nice and minimal setup with a very utilitarian theme. All monochrome because its really nice.
 
 ## How could I go about and use these?
-Read [`INSTALL.md`]{https://github.com/jumpyjacko/blob/main/INSTALL.sh}.
+Read [INSTALL.md]{https://github.com/jumpyjacko/blob/main/INSTALL.sh}.
 
 ## Window manager
 I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm).
