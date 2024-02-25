@@ -1,4 +1,5 @@
 Images/*
 .git/*
+.gitignore
 INSTALL.md
 README.md
