@@ -1,0 +1,83 @@
+#!/bin/bash
+
+LOCATION=`curl -s wttr.in/?format=%l`
+
+GREEN='\033[1;32m'
+RED='\033[0;31m'
+NC='\033[0;0m'
+
+echo -e "${GREEN}Weather${NC}: ${LOCATION}\n"
+curl -s 'wttr.in/?0?Q'
+
+echo ""
+
+echo -e "${GREEN}Current Login${NC}: "
+
+CURR_NAME=`last | sed '1!d' | sed '1 s/ .*//'`
+CURR_SYS=`last | sed '2!d' | awk '{ print $4 }'`
+CURR_START=`last | sed '2!d' | awk '{ print $5,$6,$7,$8 }'`
+
+echo -e "    ${GREEN}${CURR_NAME}${NC}: "
+echo -e "        ${GREEN}System Version${NC}: ${CURR_SYS}"
+echo -e "        ${GREEN}Start Time${NC}: ${CURR_START}"
+
+if [[ `uptime | awk '$3 ~ /:/ { print "true" }'` == 'true' ]]; then
+    CURR_UP_HR=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f1`
+    CURR_UP_MIN=`uptime | awk '{ print $3 }' | sed 's/.$//' | cut -d: -f2`
+    echo -e "        ${GREEN}Uptime${NC}: ${RED}${CURR_UP_HR}${NC} hr, ${RED}${CURR_UP_MIN}${NC} min"
+else
+    CURR_UP_MIN=`uptime | awk '{ print $3 }'`
+    echo -e "        ${GREEN}Uptime${NC}: ${RED}${CURR_UP_MIN}${NC} min"
+fi
+
+
+echo ""
+
+echo -e "${GREEN}Last Login${NC}: "
+
+LAST_NAME=`last | sed '3!d' | sed '1 s/ .*//'`
+LAST_SYS=`last | sed '4!d' | awk '{ print $4 }'`
+LAST_START=`last | sed '4!d' | awk '{ print $5,$6,$7,$8 }'`
+
+echo -e "    ${GREEN}${LAST_NAME}${NC}: "
+echo -e "        ${GREEN}System Version${NC}: ${LAST_SYS}"
+echo -e "        ${GREEN}Start Time${NC}: ${LAST_START}"
+
+echo ""
+
+function ProgressBar {
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+    printf "\r${GREEN}${3}${NC}: [${GREEN}${_fill// /=}${NC}${_empty// / }] ${_progress}%% Used\n"
+}
+
+_used=`df --total | sed '/total/!d' | awk '{ print $3 }'`
+_free=`df --total | sed '/total/!d' | awk '{ print $4 }'`
+
+_used_as_gb=`df -h --total | sed '/total/!d' | awk '{ print $3 }'`
+_free_as_gb=`df -h --total | sed '/total/!d' | awk '{ print $4 }'`
+
+ProgressBar ${_used} ${_free} Storage
+
+echo -e "    ${GREEN}Used${NC}: ${_used_as_gb} of ${_free_as_gb}"
+
+echo ""
+
+_mem_used=`free | sed '/Mem/!d' | awk '{ print $3 }'`
+_mem_free=`free | sed '/Mem/!d' | awk '{ print $2 }'`
+
+_mem_used_as_gb=`free -h | sed '/Mem/!d' | awk '{ print $3 }'`
+_mem_free_as_gb=`free -h | sed '/Mem/!d' | awk '{ print $2 }'`
+
+ProgressBar ${_mem_used} ${_mem_free} ' Memory'
+
+echo -e "    ${GREEN}Used${NC}: ${_mem_used_as_gb} of ${_mem_free_as_gb}"
+
+echo ""
+
+echo -e "${GREEN}MOTD Displayed at${NC}: `date +%d-%m-%Y` `date +%T`"
