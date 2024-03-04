@@ -239,7 +239,7 @@ song_status_format = $(white){{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
 song_library_format = $(white){%n - }{%t}|{%f}
 #
-alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_first_line_format = $b$(black)< $9 {%t}|{%f} $(black) />$9$/b
 #
 alternative_header_second_line_format = {{$(white)$b%a$/b$9}{ - $(white)%b$9}{ ($(blue)%y$9)}}|{%D}
 #
@@ -333,11 +333,11 @@ execute_on_song_change = ~/shell_scripts/music_notify
 #
 #playlist_show_mpd_host = no
 #
-#playlist_show_remaining_time = no
+playlist_show_remaining_time = yes
 #
-#playlist_shorten_total_times = no
+playlist_shorten_total_times = yes
 #
-#playlist_separate_albums = no
+playlist_separate_albums = yes
 #
 ##
 ## Note: Possible display modes: classic, columns.
@@ -386,7 +386,7 @@ user_interface = alternative
 #
 #media_library_albums_split_by_date = yes
 #
-#media_library_hide_album_dates = no
+media_library_hide_album_dates = yes
 #
 ## Available values: wrapped, normal.
 ##
@@ -399,7 +399,7 @@ header_visibility = no
 statusbar_visibility = no
 #
 ## Show the "Connected to ..." message on startup
-#connected_message_on_startup = yes
+connected_message_on_startup = no
 #
 #titles_visibility = yes
 #
@@ -409,7 +409,7 @@ statusbar_visibility = no
 #
 #lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
 #fetch_lyrics_for_current_song_in_background = no
 #
@@ -442,18 +442,18 @@ allow_for_physical_item_deletion = no
 ## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
 ## lyrics, last_fm.
 ##
-#screen_switcher_mode = playlist, browser
+screen_switcher_mode = playlist, media_library
 #
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-#startup_screen = playlist
+startup_screen = playlist
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
 ## above or an empty value for no slave screen.
 ##
-#startup_slave_screen = ""
+startup_slave_screen = "media_library"
 #
 #startup_slave_screen_focus = no
 #
@@ -461,7 +461,7 @@ allow_for_physical_item_deletion = no
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-#locked_screen_width_part = 50
+locked_screen_width_part = 30
 #
 #ask_for_locked_screen_width_part = yes
 #
@@ -469,9 +469,9 @@ allow_for_physical_item_deletion = no
 ## Width of media_library screen columns
 ##
 #
-#media_library_column_width_ratio_two = 1:1
+# media_library_column_width_ratio_two = 1:2
 #
-#media_library_column_width_ratio_three = 1:1:1
+# media_library_column_width_ratio_three = 1:1:1
 #
 ##
 ## Width of playlist_editor screen columns
@@ -481,11 +481,11 @@ allow_for_physical_item_deletion = no
 #
 #jump_to_now_playing_song_at_start = yes
 #
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = no
 #
-#clock_display_seconds = no
+clock_display_seconds = yes
 #
-# display_volume_level = no
+display_volume_level = yes
 #
 display_bitrate = yes
 #
@@ -510,7 +510,7 @@ display_bitrate = yes
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = no
 #
 #mouse_list_scroll_whole_page = no
 #
@@ -518,13 +518,13 @@ display_bitrate = yes
 #
 #empty_tag_marker = <empty>
 #
-#tags_separator = " | "
+tags_separator = ", "
 #
 #tag_editor_extended_numeration = no
 #
-#media_library_sort_by_mtime = no
+# media_library_sort_by_mtime = yes
 #
-#enable_window_title = yes
+enable_window_title = yes
 #
 ##
 ## Note: You can choose default search mode for search engine. Available modes
@@ -606,9 +606,9 @@ progressbar_elapsed_color = green:b
 #
 #player_state_color = default:b
 #
-#alternative_ui_separator_color = black:b
+alternative_ui_separator_color = white:b
 #
 window_border_color = green
 #
-active_window_border = red
+active_window_border = blue
 #
