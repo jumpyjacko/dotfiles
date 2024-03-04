@@ -2,6 +2,7 @@
   monitor = 0
   follow = keyboard
   notification_limit = 5
+  width = (300, 1000)
   origin = top-right
   offset = 5x26
   scale = 0
@@ -18,7 +19,7 @@
 
   font = mononoki Nerd Font 24 
   format = "<b>%a - %s</b>\n%b"
-  max_icon_size = 256
+  max_icon_size = 128
   icon_corner_radius = 15
 
 [urgency_low]
