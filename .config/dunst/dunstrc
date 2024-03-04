@@ -1,7 +1,6 @@
 [global]
   monitor = 0
   follow = keyboard
-  width = 300
   notification_limit = 5
   origin = top-right
   offset = 5x26
@@ -19,6 +18,8 @@
 
   font = mononoki Nerd Font 24 
   format = "<b>%a - %s</b>\n%b"
+  max_icon_size = 256
+  icon_corner_radius = 15
 
 [urgency_low]
   background = "#1d1f21"
