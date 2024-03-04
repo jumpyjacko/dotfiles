@@ -239,7 +239,7 @@ song_status_format = $(white){{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
 song_library_format = $(white){%n - }{%t}|{%f}
 #
-alternative_header_first_line_format = $b$(black)< $9 {%t}|{%f} $(black) />$9$/b
+alternative_header_first_line_format = $b$(black)> $9 {%t}|{%f} $(black) <$9$/b
 #
 alternative_header_second_line_format = {{$(white)$b%a$/b$9}{ - $(white)%b$9}{ ($(blue)%y$9)}}|{%D}
 #
