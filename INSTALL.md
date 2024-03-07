@@ -1,8 +1,10 @@
 # Packages
 Update packages
-`sudo pacman -Syu`
+```sh
+sudo pacman -Syu
+```
 
-## DWM Install
+## Full Setup (For DWM/Xorg)
 ### Packages
 Main packages
 ```sh
@@ -16,7 +18,7 @@ sudo pacman -S nodejs npm python python-pip rustup jq socat btop feh neovim kitt
 
 Extras that I personally use
 ```sh
-sudo pacman -S miniserve fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts perl-image-exiftool unrar highlight
+sudo pacman -S miniserve fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts perl-image-exiftool unrar highlight ncmpcpp mpd
 ```
 
 Gstreamer stuff
@@ -42,6 +44,9 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
 git clone https://github.com/JumpyJacko/astronvim_user.git ~/.config/nvim/lua/user
 ```
 
+Note: I do not recommend using my Neovim setup as I use the [Colemak](https://colemak.com) Keyboard layout and have chosen my keybindings in Neovim to fit this keyboard layout. If you were to use my Neovim configs, you will have to go through the [mappings.lua](https://https://github.com/jumpyjacko/astronvim_user/blob/main/mappings.lua) file and remove the majority of it.
+A better idea is to just follow the [AstroNvim Getting Started](https://docs.astronvim.com/) page, use a different distro like [NvChad](https://nvchad.com), or better yet, create your own setup.
+
 ### Actually installing DWM and it's stuff
 ```sh
 git clone https://github.com/JumpyJacko/dwm.git
@@ -57,7 +62,9 @@ cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 ```
 
 ### Change `zsh` to the main shell
-`chsh -s /usr/bin/zsh`
+```sh
+chsh -s /usr/bin/zsh
+```
 
 ### Paru Install and Packages
 Install `rust` toolchains (as a developer who will use Rust)
@@ -78,7 +85,7 @@ makepkg -si --noconfirm
 paru -S joshuto j4-dmenu-desktop
 ```
 
-### Install my font
+### Install mononoki Nerd Font
 ```sh
 cd ~
 curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Mononoki.zip 
@@ -96,7 +103,7 @@ rm readme.md
 rm LICENSE.txt
 ```
 
-### Atuni + Tmux Install
+### Atuin + Tmux Install
 ```sh
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
 atuin import auto
@@ -104,3 +111,6 @@ atuin import auto
 echo $passvar | sudo -S pacman -Sy tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+### `ncmpcpp` / `mpd` Setup
+If it doesn't work out of the box, read [the Arch Wiki](https://wiki.archlinux.org/title/Music_Player_Daemon)
