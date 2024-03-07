@@ -83,7 +83,7 @@ visualizer_output_name = Visualizer feed
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-visualizer_in_stereo = no
+visualizer_in_stereo = yes
 #
 ##
 ## Note: set below to >=10 only if you have synchronization issues with
@@ -103,7 +103,7 @@ visualizer_type = spectrum
 #
 #visualizer_fps = 60
 #
-visualizer_autoscale = no
+visualizer_autoscale = yes
 #
 visualizer_look = ●▮
 #
@@ -128,17 +128,17 @@ visualizer_spectrum_smooth_look = yes
 ## visualizer look at a larger slice of time, which results in less jumpy
 ## visualizer output.
 #
-visualizer_spectrum_dft_size = 3
+visualizer_spectrum_dft_size = 2
 #
 visualizer_spectrum_gain = 5
 #
 ## Left-most frequency of visualizer in Hz, must be less than HZ MAX
 #
-visualizer_spectrum_hz_min = 40
+# visualizer_spectrum_hz_min = 40
 #
 ## Right-most frequency of visualizer in Hz, must be greater than HZ MIN
 #
-visualizer_spectrum_hz_max = 10000
+# visualizer_spectrum_hz_max = 10000
 #
 ##### system encoding #####
 ##
