@@ -18,7 +18,7 @@ sudo pacman -S nodejs npm python python-pip rustup jq socat btop feh neovim kitt
 
 Extras that I personally use
 ```sh
-sudo pacman -S miniserve fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts perl-image-exiftool unrar highlight ncmpcpp mpd
+sudo pacman -S miniserve fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts perl-image-exiftool unrar highlight ncmpcpp mpd mpc
 ```
 
 Gstreamer stuff
