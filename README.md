@@ -12,12 +12,13 @@ I also use my fork of thytom/dwmbar at [this repository](https://github.com/Jump
 I use [AstroNvim](https://github.com/AstroNvim/AstroNvim) with my configs at [this repository](https://github.com/JumpyJacko/astronvim_user).
 
 ## Gallery
-![desktop](./Images/desktop.png)
-![clean_desktop](./Images/clean_desktop.png)
+![desktop](./images/desktop.png)
+![clean_desktop](./images/clean_desktop.png)
 
 ### Tmux and Neovim
-![tmux+neovim](./Images/tmux+neovim.png)
-![tmux+neovim](./Images/tmux+neovim+fzf.png)
+![tmux+neovim](./images/tmux+neovim.png)
+![tmux+neovim](./images/tmux+neovim+fzf.png)
 
 ### Extras
-![ncmpcpp](./Images/ncmpcpp.png)
+![ncmpcpp](./images/ncmpcpp.png)
+![ncmpcpp_vis](./images/ncmpcpp_vis.png)
