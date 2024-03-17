@@ -39,6 +39,8 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
+export QT_STYLE_OVERRIDE=adwaita
+
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
 

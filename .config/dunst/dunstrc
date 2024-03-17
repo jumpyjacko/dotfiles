@@ -2,7 +2,7 @@
   monitor = 0
   follow = keyboard
   notification_limit = 5
-  width = (300, 1000)
+  width = (300, 500)
   origin = top-right
   offset = 5x26
   scale = 0
@@ -16,6 +16,10 @@
   separator_color = frame
 
   highlight = "#c5c8c6"
+
+  progress_bar = true
+  progress_bar_horizontal_alignment = center
+  progress_bar_max_width = 480
 
   font = mononoki Nerd Font 24 
   format = "<b>%a - %s</b>\n%b"
@@ -32,6 +36,7 @@
   background = "#1d1f21"
   foreground = "#c5c8c6"
   frame_color = "#bbbbbb"
+  timeout = 2
 
 [urgency_critical]
   background = "#1d1f21"

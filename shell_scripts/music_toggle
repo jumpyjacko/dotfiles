@@ -1,0 +1,18 @@
+#!/bin/bash
+
+msg_tag="ncmpcpp_event"
+
+noti_body=$(mpc toggle)
+noti_body=$(echo "$noti_body" | sed '$d')
+# noti_body=$(echo "$noti_body" | sed -E 's/\[paused\]//; s/\[playing\]//')
+
+progress=$(echo "$noti_body" | grep -oP '\(\K\d+(?=%)')
+
+music_dir="$HOME/Music"
+previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
+filename="$(mpc --format "$music_dir"/%file% current)"
+previewname="$previewdir/$(mpc --format %album% current | base64).png"
+
+[ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=480:480 "$previewname" > /dev/null 2>&1
+
+dunstify -a "​" -h string:x-dunst-stack-tag:"$msg_tag" -h int:value:"$progress" "$noti_body" -i $previewname
