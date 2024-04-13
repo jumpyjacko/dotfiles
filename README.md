@@ -1,24 +1,20 @@
-# My Personal Set of dotfiles (Arch btw)
-A nice and minimal setup with a very utilitarian theme. All monochrome because its really nice.
+# dotfiles
+A nice and minimal setup with a very simple theme.
 
 ## How could I go about and use these?
 Read [INSTALL.md](https://github.com/jumpyjacko/dotfiles/blob/main/INSTALL.md).
+> Note: Mostly filled with commands for me so that I don't have to remember what I need.
 
 ## Window manager
-I use dwm for this, it is at [this repository](https://github.com/JumpyJacko/dwm).
-I also use my fork of thytom/dwmbar at [this repository](https://github.com/JumpyJacko/dwmbar).
+I use dwm for this, it is at [this repository](https://github.com/jumpyjacko/dwm).
+I also use my fork of thytom/dwmbar at [this repository](https://github.com/jumpyjacko/dwmbar).
 
 ## Neovim
-I use [AstroNvim](https://github.com/AstroNvim/AstroNvim) with my configs at [this repository](https://github.com/JumpyJacko/astronvim_user).
+I use my own Neovim configs that uses the [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) plugin manager and found at [this repo](https://github.com/jumpyjacko/nvim).
 
 ## Gallery
 ![desktop](./images/desktop.png)
 ![clean_desktop](./images/clean_desktop.png)
 
-### Tmux and Neovim
-![tmux+neovim](./images/tmux+neovim.png)
-![tmux+neovim](./images/tmux+neovim+fzf.png)
-
 ### Extras
 ![ncmpcpp](./images/ncmpcpp.png)
-![ncmpcpp_vis](./images/ncmpcpp_vis.png)

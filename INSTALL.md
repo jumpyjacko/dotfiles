@@ -26,10 +26,15 @@ Gstreamer stuff
 sudo pacman -S gstreamer gft-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 ```
 
+### IMPORTANT: Setup SSH key
+uhh, just follow these two guides:
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
 ### Dotfiles
 Clone the dotfiles
 ```sh
-git clone https://github.com/jumpyjacko/dotfile.git` $HOME/dotfiles
+git clone git@github.com:jumpyjacko/dotfile.git` $HOME/dotfiles
 ```
 
 Use GNU Stow
@@ -37,24 +42,24 @@ Use GNU Stow
 stow --adopt .
 ```
 
-### AstroNvim Install / Neovim setup
-Bring your own setup, for me it's:
+### Neovim setup
+Bring your own setup, for me it's using the [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) install script and cloning my [Neovim setup](https://github.com/jumpyjacko/nvim).
 ```sh
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
-git clone https://github.com/JumpyJacko/astronvim_user.git ~/.config/nvim/lua/user
+cd ~/.config/
+git clone git@github.com:jumpyjacko/nvim
 ```
 
-Note: I do not recommend using my Neovim setup as I use the [Colemak](https://colemak.com) Keyboard layout and have chosen my keybindings in Neovim to fit this keyboard layout. If you were to use my Neovim configs, you will have to go through the [mappings.lua](https://https://github.com/jumpyjacko/astronvim_user/blob/main/mappings.lua) file and remove the majority of it.
-A better idea is to just follow the [AstroNvim Getting Started](https://docs.astronvim.com/) page, use a different distro like [NvChad](https://nvchad.com), or better yet, create your own setup.
+> Note: DO NOT USE MY NEOVIM SETUP. I use the Colemak layout and have rebound *many* keys. If you *do* want to use the setup, make sure you go to `lua/mappings.lua` and clear out the majority of it.
+
 
 ### Actually installing DWM and it's stuff
 ```sh
-git clone https://github.com/JumpyJacko/dwm.git
+git clone git@github.com:jumpyjacko/dwm.git
 cd dwm
 sudo make clean install && sudo -k
 cd ..
 
-git clone https://github.com/jumpyjacko/dwmbar.git
+git clone git@github.com/jumpyjacko/dwmbar.git
 cd dwmbar
 ./install.sh && sudo -k
 cd ..
