@@ -13,16 +13,18 @@ previewname="$previewdir/$(mpc --format %album% current | base64).png"
 dunstify -a "$(mpc --format "%artist%" current)" "$(mpc --format '\n%title%' current)" -h string:x-dunst-stack-tag:$msg_tag -i $previewname
 
 # Displaying album art in ncmpcpp
-kitten icat --clear
+if kitten icat --detect-support &>/dev/null; then
+  kitten icat --clear
 
-window_size=$(stty size)
-window_height=$(echo $window_size | cut -d' ' -f1)
-window_width=$(echo $window_size | cut -d' ' -f2)
-spacing_from_edge=5
+  window_size=$(stty size)
+  window_height=$(echo $window_size | cut -d' ' -f1)
+  window_width=$(echo $window_size | cut -d' ' -f2)
+  spacing_from_edge=1
 
-image_size=40
+  image_size=40
 
-x_pos=$((window_width - image_size - spacing_from_edge))
-y_pos=$((window_height - (image_size / 2)))
+  x_pos=$((spacing_from_edge))
+  y_pos=$((window_height - (image_size / 2)))
 
-kitten icat --align center --scale-up --place ${image_size}x${image_size/2}@${x_pos}x${y_pos} $previewname
+  kitten icat --align center --scale-up --place ${image_size}x${image_size/2}@${x_pos}x${y_pos} $previewname
+fi
