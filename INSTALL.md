@@ -43,14 +43,15 @@ stow --adopt .
 ```
 
 ### Neovim setup
-Bring your own setup, for me it's using the [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) install script and cloning my [Neovim setup](https://github.com/jumpyjacko/nvim).
+Bring your own setup, for me it's installed with cloning my [Neovim setup](https://github.com/jumpyjacko/nvim).
+> I use the automatic bootstrapping setup for Rocks.nvim, only need to install lua 5.1 with `p -S lua51`
 ```sh
 cd ~/.config/
 git clone git@github.com:jumpyjacko/nvim
+nvim
 ```
 
-> Note: DO NOT USE MY NEOVIM SETUP. I use the Colemak layout and have rebound *many* keys. If you *do* want to use the setup, make sure you go to `lua/mappings.lua` and clear out the majority of it.
-
+> Note: DO NOT USE MY NEOVIM SETUP because I use the Colemak layout and have rebound *many* keys. If you *do* want to use the setup, make sure you go to `lua/mappings.lua` and clear out the majority of it.
 
 ### Actually installing DWM and it's stuff
 ```sh
