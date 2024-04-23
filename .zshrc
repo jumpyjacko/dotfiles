@@ -98,6 +98,7 @@ alias sudoe="sudo -E -s nvim"
 alias t="tmux"
 alias tn="tmux new-session -A -s"
 alias tk="tmux kill-session -t"
+alias tl="tmux list-sessions"
 
 alias ..="cd .."
 alias ...="cd ../.."
