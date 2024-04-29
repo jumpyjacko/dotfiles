@@ -120,3 +120,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ### `ncmpcpp` / `mpd` Setup
 If it doesn't work out of the box, read [the Arch Wiki](https://wiki.archlinux.org/title/Music_Player_Daemon)
+
+### Thunar Setup
+```sh
+sudo pacman -S thunar tumbler nwg-look
+```
+
+For the theme, I use the Colloid-Grey-Dark-Compact gtk theme found [here](https://github.com/vinceliuice/Colloid-gtk-theme).
