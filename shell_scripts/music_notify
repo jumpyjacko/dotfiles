@@ -5,7 +5,9 @@ msg_tag="ncmpcpp_event"
 music_dir="$HOME/Music"
 previewdir="$XDG_CONFIG_HOME/ncmpcpp/previews"
 filename="$(mpc --format "$music_dir"/%file% current)"
-previewname="$previewdir/$(mpc --format %album% current | base64).png"
+albumbase64="$(mpc --format %album% current | base64)"
+cleanalbumname="${albumbase64//\//_}"
+previewname="$previewdir/$cleanalbumname.png"
 
 [ -e "$previewname" ] || ffmpeg -y -i "$filename" -an -vf scale=480:480 "$previewname" > /dev/null 2>&1
 
