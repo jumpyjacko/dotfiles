@@ -48,21 +48,21 @@ bindkey "^H" backward-delete-word
 if [ "$TERM" = "linux" ]; then
   /bin/echo -e "
   \e]P0000000
-  \e]P1a1424c
-  \e]P2798e66
-  \e]P3c89768
-  \e]P475798a
-  \e]P5896a80
-  \e]P7708b8a
-  \e]P7a3a5a4
-  \e]P9535b69
-  \e]P9a1424c
-  \e]PA798e66
-  \e]PBc89768
-  \e]PC75798a
-  \e]PDb89680
-  \e]PE708b8a
-  \e]PFd9ccd3
+  \e]P1bf616a
+  \e]P2a3be8c
+  \e]P3ebcb8b
+  \e]P48fa1b3
+  \e]P5b48ead
+  \e]P696b5b4
+  \e]P7c0c5ce
+  \e]P865737e
+  \e]P9bf616a
+  \e]PAa3be8c
+  \e]PBebcb8b
+  \e]PC8fa1b3
+  \e]PDb48ead
+  \e]PE96b5b4
+  \e]PFeff1f5
   "
   # Get rid of artifacts
   clear
