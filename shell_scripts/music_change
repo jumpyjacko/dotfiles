@@ -21,11 +21,11 @@ if kitten icat --detect-support &>/dev/null; then
   window_size=$(stty size)
   window_height=$(echo $window_size | cut -d' ' -f1)
   window_width=$(echo $window_size | cut -d' ' -f2)
-  spacing_from_edge=1
+  spacing_from_edge_x=2
 
-  image_size=40
+  image_size=50
 
-  x_pos=$((spacing_from_edge))
+  x_pos=$((window_width - image_size - spacing_from_edge_x))
   y_pos=$((window_height - (image_size / 2)))
 
   kitten icat --align center --scale-up --place ${image_size}x${image_size/2}@${x_pos}x${y_pos} $previewname

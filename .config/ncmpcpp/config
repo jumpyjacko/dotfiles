@@ -321,7 +321,7 @@ song_columns_list_format = (20)[]{a} (6f)[249]{NE} (50)[white]{t|f:Title} (20)[2
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = ~/shell_scripts/music_notify
+execute_on_song_change = ~/shell_scripts/music_change
 #
 ##
 ## Note: Custom command that will be executed each time player state
