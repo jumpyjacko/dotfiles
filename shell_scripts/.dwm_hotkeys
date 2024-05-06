@@ -22,12 +22,12 @@
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
  ║ Move Stack (up/down)         ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+n/e  ║ Set Layout (Grid)            ║ \u001b[31m{S*}\u001b[0m+g       ║ Hotkey Helper            ║ \u001b[31m{S*}\u001b[0m+\u001b[33mCtrl\u001b[0m+h   ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
- ║ Toggle Window Gaps           ║ \u001b[31m{S*}\u001b[0m+\u001b[34mAlt\u001b[0m+0      ║ Cycle Layout (up/down)       ║ \u001b[31m{S*}\u001b[0m+\u001b[33mCtrl\u001b[0m+,/.║                          ║               ║
+ ║ Toggle Window Gaps           ║ \u001b[31m{S*}\u001b[0m+\u001b[34mAlt\u001b[0m+0      ║ Cycle Layout (up/down)       ║ \u001b[31m{S*}\u001b[0m+\u001b[33mCtrl\u001b[0m+,/.║ MPD Controls (󰼨 󰏤 󰼧)     ║ \u001b[31m{S*}\u001b[0m+F9-10    ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
- ║ Set to Default Gap Sizes     ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+\u001b[34mAlt\u001b[0m+0║ Toggle Active Window         ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+p ║ Move a Floating Window   ║ \u001b[31m{S*}\u001b[0m+RClick   ║
+ ║ Set to Default Gap Sizes     ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+\u001b[34mAlt\u001b[0m+0║ Toggle Active Window         ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+p ║ Move a Floating Window   ║ \u001b[31m{S*}\u001b[0m+LClick   ║
  ║                              ║                 ║ to Floating                  ║              ║                          ║               ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
- ║ Toggle Window between Master ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+\u001b[97mEnter\u001b[0m║ Toggle Stack Windows         ║ \u001b[31m{S*}\u001b[0m+r       ║ Resize a Floating Window ║ \u001b[31m{S*}\u001b[0m+LClick   ║
+ ║ Toggle Window between Master ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+\u001b[97mEnter\u001b[0m║ Toggle Stack Windows         ║ \u001b[31m{S*}\u001b[0m+r       ║ Resize a Floating Window ║ \u001b[31m{S*}\u001b[0m+RClick   ║
  ║ and Stack                    ║                 ║ to Master Width              ║              ║                          ║               ║
  ╠══════════════════════════════╬═════════════════╬══════════════════════════════╬══════════════╬══════════════════════════╬═══════════════╣
  ║ Tag Quick Switch             ║ \u001b[31m{S*}\u001b[0m+Tab        ║ Kill Window                  ║ \u001b[31m{S*}\u001b[0m+w       ║ Take a Screenshot        ║ \u001b[31m{S*}\u001b[0m+\u001b[32mShift\u001b[0m+s  ║
