@@ -89,6 +89,7 @@ serve_alias() {
   miniserve --index index.html --verbose --port 8080
 }
 alias serve="serve_alias"
+alias gitslog="git log --pretty=format:'%C(auto)%h %Cblue%ad %Cgreen%s%Creset' --date=iso --graph --decorate --all"
 
 alias p="sudo pacman"
 alias s="startx"
