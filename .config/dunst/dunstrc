@@ -24,7 +24,7 @@
   font = mononoki Nerd Font 24 
   format = "<b>%a - %s</b>\n%b"
   max_icon_size = 128
-  icon_corner_radius = 15
+  icon_corner_radius = 0 
 
 [urgency_low]
   background = "#1d1f21"
