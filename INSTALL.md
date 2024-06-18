@@ -1,5 +1,5 @@
 # Full Setup For DWM/Xorg
-### Packages
+## Packages
 Update packages
 ```sh
 sudo pacman -Syu
