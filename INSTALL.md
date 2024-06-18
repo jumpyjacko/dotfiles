@@ -26,7 +26,7 @@ sudo pacman -S gstreamer gft-plugin-pipewire gst-plugins-base gst-libav gst-plug
 
 #### Extra Packages (music player, utilities, etc.)
 ```sh
-sudo pacman -S miniserve perl-image-exiftool highlight ncmpcpp mpd mpc
+sudo pacman -S miniserve perl-image-exiftool highlight ncmpcpp mpd mpc lazygit
 ```
 
 ### IMPORTANT (for me): Setup SSH key
