@@ -8,7 +8,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 
 # Formats vcs_info message
-zstyle ':vcs_info:git:*' formats ' %f%F{1}שׂ %f%F{2}%b'
+zstyle ':vcs_info:git:*' formats ' %f%F{1} %f%F{2}%b'
 
 # Enabling and setting custom prompt (thanks zsh prompt generator)
 autoload -Uz promptinit && promptinit

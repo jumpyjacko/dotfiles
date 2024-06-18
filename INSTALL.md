@@ -1,37 +1,40 @@
-# Packages
+# Full Setup For DWM/Xorg
+### Packages
 Update packages
 ```sh
 sudo pacman -Syu
 ```
 
-## Full Setup (For DWM/Xorg)
-### Packages
-Main packages
+#### Main packages
 ```sh
-sudo pacman -S base-devel zsh pamixer git openssh xorg xorg-server xorg-apps xorg-xinit dmenu dunst unzip
+# Most essential for a functional graphical system
+sudo pacman -S base-devel zsh pamixer git openssh xorg xorg-server xorg-apps xorg-xinit dmenu kitty unzip
+
+# Still essential for these dotfiles but not necessarily needed for a functional graphical system
+sudo pacman -S nodejs npm python python-pip rustup dunst jq socat btop feh neovim eza bat zoxide zathura unrar maim convert qt5ct adwaita-qt5 ttf-mononoki-nerd
 ```
 
-Essential apps and packages
+#### IME Packages
 ```sh
-sudo pacman -S nodejs npm python python-pip rustup jq socat btop feh neovim kitty eza bat zoxide zathura maim convert qt5ct adwaita-qt5
+sudo pacman -S fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts
 ```
 
-Extras that I personally use
-```sh
-sudo pacman -S miniserve fcitx5-mozc fcitx5-configtool fcitx5-qt fcitx5-gtk adobe-source-han-sans-jp-fonts perl-image-exiftool unrar highlight ncmpcpp mpd mpc
-```
-
-Gstreamer stuff
+#### Gstreamer Packages
 ```sh
 sudo pacman -S gstreamer gft-plugin-pipewire gst-plugins-base gst-libav gst-plugins-good gst-plugins-bad
 ```
 
-### IMPORTANT: Setup SSH key
-uhh, just follow these two guides:
+#### Extra Packages (music player, utilities, etc.)
+```sh
+sudo pacman -S miniserve perl-image-exiftool highlight ncmpcpp mpd mpc
+```
+
+### IMPORTANT (for me): Setup SSH key
+Uhh, just follow these two guides:
 - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
-### Dotfiles
+## Dotfiles
 Clone the dotfiles
 ```sh
 git clone git@github.com:jumpyjacko/dotfile.git` $HOME/dotfiles
@@ -42,18 +45,18 @@ Use GNU Stow
 stow --adopt .
 ```
 
-### Neovim setup
+## Neovim setup
 Bring your own setup, for me it's installed with cloning my [Neovim setup](https://github.com/jumpyjacko/nvim).
-> I use the automatic bootstrapping setup for Rocks.nvim, only need to install lua 5.1 with `p -S lua51`
 ```sh
 cd ~/.config/
 git clone git@github.com:jumpyjacko/nvim
 nvim
 ```
 
-> Note: DO NOT USE MY NEOVIM SETUP because I use the Colemak layout and have rebound *many* keys. If you *do* want to use the setup, make sure you go to `lua/mappings.lua` and clear out the majority of it.
+> Note: DO NOT USE MY NEOVIM SETUP because I use the Colemak layout and have rebound *many* keys. If you *do* want to use the setup, make sure you go to `lua/core/keymaps.lua` and clear out the majority of it.
 
-### Actually installing DWM and it's stuff
+## Installing the Graphical Environment (DWM and ly)
+### Installing DWM
 ```sh
 git clone git@github.com:jumpyjacko/dwm.git
 cd dwm
@@ -67,12 +70,15 @@ cd ..
 cp .config/dwmbar/dwmbarrc /usr/share/dwmbar/config && sudo -k
 ```
 
+### Installing `ly`
+Follow the steps at [this repo](https://github.com/jumpyjacko/ly).
+
 ### Change `zsh` to the main shell
 ```sh
 chsh -s /usr/bin/zsh
 ```
 
-### Paru Install and Packages
+## Paru Install and Packages
 Install `rust` toolchains (as a developer who will use Rust)
 ```sh
 rustup toolchain install stable nightly
@@ -91,30 +97,13 @@ makepkg -si --noconfirm
 paru -S joshuto j4-dmenu-desktop
 ```
 
-### Install mononoki Nerd Font
-```sh
-cd ~
-curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Mononoki.zip 
-unzip -a Mononoki.zip
-echo $passvar | sudo -S mkdir /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Bold.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Bold Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Bold.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Bold Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Italic.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Mono Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
-echo $passvar | sudo -S mv ./"Mononoki Nerd Font Complete Regular.ttf" /usr/share/fonts/"mononoki Nerd Font"
-find -name '*Mononoki*' -delete
-rm readme.md
-rm LICENSE.txt
-```
-
+## Additional Steps
 ### Atuin + Tmux Install
 ```sh
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
 atuin import auto
 
-echo $passvar | sudo -S pacman -Sy tmux
+sudo pacman -Sy tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
