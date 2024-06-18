@@ -42,6 +42,7 @@ git clone git@github.com:jumpyjacko/dotfile.git` $HOME/dotfiles
 
 Use GNU Stow
 ```sh
+cd $HOME/dotfiles
 stow --adopt .
 ```
 
