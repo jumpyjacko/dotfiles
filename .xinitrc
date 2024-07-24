@@ -10,6 +10,10 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export GLFW_IM_MODULE=ibus
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+export WINEPREFIX=~/.local/share/bottles/bottles/SpitfireAudioApp
+export WINELOADER=~/.local/share/bottles/runners/soda-9.0-1/bin/wine
 fcitx5 &
 
 dwmbar &
