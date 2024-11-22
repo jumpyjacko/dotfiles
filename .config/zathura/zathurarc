@@ -1,2 +1,3 @@
 set recolor true
 set font "'mononoki Nerd Font' normal 10"
+set selection-clipboard clipboard
