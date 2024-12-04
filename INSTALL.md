@@ -128,7 +128,7 @@ pacman -Sy river
 
 Install additional packages
 ```sh
-paru -Sy tofi ristatus brightnessctl
+paru -Sy tofi ristatus brightnessctl wlr-randr
 ```
 
 Change some configuration like input devices, etc.
