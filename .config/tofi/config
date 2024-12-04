@@ -1,0 +1,16 @@
+font = "mononoki Nerd Font"
+font-size = 16
+
+width = 50%
+height = 50%
+border-width = 1
+border-color = #eeeeee
+outline-width = 0
+padding-left = 5%
+padding-top = 5%
+result-spacing = 25
+num-results = 7
+background-color = #1d1f21
+
+selection-color = #eeeeee
+default-result-color = #444444

@@ -1,0 +1,173 @@
+(defpoll clock_time   :interval "5m"  "date +\%H")
+(defpoll clock_minute :interval "5s"  "date +\%M")
+(defpoll clock_date   :interval "10h" "date '+%d/%m'")
+
+(defpoll weather :interval "1h" "curl -s 'wttr.in/?format=%C+%t'")
+(defpoll wt_big :interval "30m" "curl -s 'wttr.in/?0?q?T'")
+
+(defpoll kernel_ver :interval "20h" "uname -r")
+(defpoll battery :interval "30s" "$HOME/.config/eww/scripts/battery")
+(defpoll backlight :interval "1s" "$HOME/.config/eww/scripts/backlight")
+
+(deflisten tags `while true; do ristate -t | jq '.tags[][]' -r --unbuffered; sleep 1s; done`)
+
+(defvar eww "eww -c $HOME/.config/eww")
+
+(defwindow river_bar
+  :monitor 0
+  :exclusive "true"
+  :focusable "false"
+  :stacking "bottom"
+  :geometry (geometry :x "0px"
+                      :y "0px"
+                      :width "100%"
+                      :height "44px"
+                      :anchor "top center")
+  (bar_1)
+)
+
+(defwidget bar_1 []
+  (box :class "bar_class"
+       :orientation "h"
+    (left)
+    (middle)
+    (right)
+  )
+)
+
+(defwidget left []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "start"
+       :class "left_modules"
+    (tag_indicator)
+  )
+)
+
+(defwidget middle []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "center"
+       :class "middle_modules"
+    (time)
+  )
+)
+
+(defwidget right []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "end"
+       :class "right_modules"
+    (backlight)
+    (sep)
+    (battery)
+    (sep)
+    (weather)
+    (sep)
+    (kernel)
+  )
+)
+
+(defwidget sep []
+  (box :class "module-2"
+       :vexpand false
+       :hexpand false
+    (label :class "separ"
+           :text "|"
+    )
+  )
+)
+
+(defwidget time []
+  (box :class "module"
+       :space-evenly false
+       :orientation "horizontal"
+       :spacing "3"
+    (label :text clock_time :class "clock_time_class")
+    (label :text ":" :class "clock_time_sep")
+    (label :text clock_minute :class "clock_minute_class")
+    (sep)
+    (label :text clock_date)
+  )
+)
+
+(defwidget kernel []
+  (box :class "kernel"
+       :vexpand false
+       :hexapnd false
+    (label :text kernel_ver)
+  )
+)
+
+(defwidget weather []
+  (box :class "weather"
+       :vexpand false
+       :hexapnd false
+    (label :text weather)
+  )
+)
+
+(defwidget battery []
+  (box :class "battery"
+       :vexpand false
+       :hexpand false
+    (label :text battery)
+  )
+)
+
+
+(defwidget backlight []
+  (box :class "backlight"
+       :vexpand false
+       :hexpand false
+    (label :text backlight)
+  )
+)
+
+(defwidget tag_indicator []
+	(box 
+		:orientation "h"
+		:halign "start"
+		:class "tag-indicator-box"
+	(eventbox
+		:onscroll "./scripts/river-scroll.sh {} ${tags}"
+	(box
+		:space-evenly "true"
+		:spacing 15
+	(button
+		:onclick "riverctl set-focused-tags 1"
+		:class {tags == "1" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "1" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 2"
+		:class {tags == "2" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "2" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 4"
+		:class {tags == "3" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "3" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 8"
+		:class {tags == "4" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "4" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 16"
+		:class {tags == "5" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "5" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 32"
+		:class {tags == "6" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "6" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 64"
+		:class {tags == "7" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "7" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 128"
+		:class {tags == "8" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "8" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 256"
+		:class {tags == "9" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "9" ? "-" : "o"}))
+	))))

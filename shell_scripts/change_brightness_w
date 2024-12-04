@@ -1,0 +1,40 @@
+#!/bin/bash
+
+msg_tag="monitor_brightness"
+
+current_display=$(wlr-randr | awk 'NR==1{print $1}')
+increment_value="5%"
+
+increment_brightness() {
+  brightnessctl set +$increment_value
+  current_brightness=$((100 * $(brightnessctl get) / $(brightnessctl max)))
+  
+  dunstify -a $current_display -u low -h string:x-dunst-stack-tag:$msg_tag \
+    -h int:value:"$current_brightness" "Brightness: ${current_brightness}%"
+}
+
+decrement_brightness() {
+  brightnessctl set $increment_value-
+  current_brightness=$((100 * $(brightnessctl get) / $(brightnessctl max)))
+  
+  dunstify -a $current_display -u low -h string:x-dunst-stack-tag:$msg_tag \
+    -h int:value:"$current_brightness" "Brightness: ${current_brightness}%"
+}
+
+if [ -z "$1" ]; then
+  exit 1
+fi
+
+case "$1" in
+  "inc")
+    increment_brightness
+    ;;
+  "dec")
+    decrement_brightness
+    ;;
+  *)
+    exit 1
+    ;;
+esac
+
+exit 0

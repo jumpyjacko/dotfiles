@@ -40,6 +40,14 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 export QT_STYLE_OVERRIDE=adwaita
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Fcitix5 Exports
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export GLFW_IM_MODULE=ibus
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
