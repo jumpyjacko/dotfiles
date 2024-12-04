@@ -101,6 +101,7 @@ alias gitslog="git log --pretty=format:'%C(auto)%h %Cblue%ad %Cgreen%s%Creset' -
 
 alias p="sudo pacman"
 alias s="startx"
+alias sr="exec river"
 alias e="nvim"
 alias sudoe="sudo -E -s nvim"
 

@@ -28,6 +28,7 @@ riverctl rule-add -app-id "bar" csd
 # Make various apps use Server Side Decorations
 riverctl rule-add -app-id "zen-alpha" ssd
 riverctl rule-add -app-id "thunar" ssd
+riverctl rule-add -app-id "org.pwmt.zathura" ssd
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.

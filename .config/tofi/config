@@ -1,10 +1,12 @@
-font = "mononoki Nerd Font"
+font = "/usr/share/fonts/TTF/MononokiNerdFont-Regular.ttf"
 font-size = 16
+hint-font = false
+late-keyboard-init = true
 
 width = 50%
 height = 50%
-border-width = 1
-border-color = #eeeeee
+border-width = 2
+border-color = #bbbbbb
 outline-width = 0
 padding-left = 5%
 padding-top = 5%
