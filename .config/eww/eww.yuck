@@ -8,6 +8,7 @@
 (defpoll kernel_ver :interval "20h" "uname -r")
 (defpoll battery :interval "30s" "$HOME/.config/eww/scripts/battery")
 (defpoll backlight :interval "1s" "$HOME/.config/eww/scripts/backlight")
+(defpoll volume :interval "1s" "$HOME/.config/eww/scripts/volume")
 
 (deflisten tags `while true; do ristate -t | jq '.tags[][]' -r --unbuffered; sleep 1s; done`)
 
@@ -58,6 +59,8 @@
        :space-evenly false
        :halign "end"
        :class "right_modules"
+    (volume)
+    (sep)
     (backlight)
     (sep)
     (battery)
@@ -121,6 +124,14 @@
        :vexpand false
        :hexpand false
     (label :text backlight)
+  )
+)
+
+(defwidget volume []
+  (box :class "volume"
+       :vexpand false
+       :hexpand false
+    (label :text volume)
   )
 )
 
