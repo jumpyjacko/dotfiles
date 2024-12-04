@@ -117,3 +117,18 @@ sudo pacman -S thunar tumbler nwg-look
 ```
 
 For the theme, I use the Colloid-Grey-Dark-Compact gtk theme found [here](https://github.com/vinceliuice/Colloid-gtk-theme).
+
+# Wayland
+Switch to the Wayland branch of this repo.
+
+Install `river`
+```sh
+pacman -Sy river
+```
+
+Install additional packages
+```sh
+paru -Sy tofi ristatus brightnessctl
+```
+
+Change some configuration like input devices, etc.
