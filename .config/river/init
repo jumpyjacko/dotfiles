@@ -37,6 +37,7 @@ rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.55 &
 # --- MAPPINGS ---
 riverctl map normal Super Return spawn kitty
 riverctl map normal Super Space spawn "tofi-drun --drun-launch=true"
+riverctl map normal Super+Shift S spawn 'grim -g "$(slurp -d)" - | wl-copy'
 
 riverctl map normal Super W close
 riverctl map normal Super+Shift Q exit
