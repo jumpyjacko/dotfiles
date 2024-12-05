@@ -143,6 +143,10 @@ do
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
     riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    riverctl map $mode None XF86AudioPrev         spawn 'mpc prev'
+    riverctl map $mode None XF86AudioPlay         spawn '$HOME/shell_scripts/music_toggle'
+    riverctl map $mode None XF86AudioNext         spawn 'mpc next'
     
     # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
     riverctl map $mode None XF86MonBrightnessUp   spawn '$HOME/shell_scripts/change_brightness_w inc'
