@@ -39,10 +39,10 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
-export QT_STYLE_OVERRIDE=adwaita
+export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Fcitix5 Exports
+# Fcitx5 Exports
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
