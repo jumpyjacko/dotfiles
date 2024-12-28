@@ -2,8 +2,7 @@
 (defpoll clock_minute :interval "5s"  "date +\%M")
 (defpoll clock_date   :interval "10h" "date '+%d/%m'")
 
-(defpoll weather :interval "1h" "curl -s 'wttr.in/?format=%C+%t'")
-(defpoll wt_big :interval "30m" "curl -s 'wttr.in/?0?q?T'")
+;; (defpoll weather_raw :interval "1h" "curl -s 'wttr.in/sydney?format=%C+%t'")
 
 (defpoll kernel_ver :interval "20h" "uname -r")
 (defpoll battery :interval "30s" "$HOME/.config/eww/scripts/battery")
@@ -65,8 +64,6 @@
     (sep)
     (battery)
     (sep)
-    (weather)
-    (sep)
     (kernel)
   )
 )
@@ -102,13 +99,13 @@
   )
 )
 
-(defwidget weather []
-  (box :class "weather"
-       :vexpand false
-       :hexapnd false
-    (label :text weather)
-  )
-)
+;; (defwidget weather []
+;;   (box :class "weather"
+;;        :vexpand false
+;;        :hexapnd false
+;;     (label :text weather_raw)
+;;   )
+;; )
 
 (defwidget battery []
   (box :class "battery"
