@@ -11,8 +11,7 @@ I use dwm for this, it is at [this repository](https://github.com/jumpyjacko/dwm
 I also use my fork of thytom/dwmbar at [this repository](https://github.com/jumpyjacko/dwmbar).
 
 ##### Wayland
-> This is now my current default, found at the `wayland` branch.
-This uses the [river](https://codeberg.org/river/river) wayland compositer.
+This is now my current default, found at the `wayland` branch. This uses the [river](https://codeberg.org/river/river) wayland compositor.
 
 #### Neovim
 I use my own Neovim configs that uses the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager and found at [this repo](https://github.com/jumpyjacko/nvim).
