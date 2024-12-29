@@ -89,9 +89,7 @@ export MANROFFOPT="-c"
 # Aliases for convenience
 alias ls="eza -la --git --group-directories-first"
 alias cat="bat --paging=never --decorations=never"
-alias fm="joshuto"
 alias lg="lazygit"
-alias tracert="traceroute"
 serve_alias() {
   firefox http://localhost:8080 & disown
   miniserve --index index.html --verbose --port 8080
@@ -116,10 +114,10 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
-# Specifically made for the HP Spectre laptop because it has a strange display
+# Xorg brightness control
 alias brightness='xrandr --output eDP1 --brightness'
 
-# Aliases for my fun shell scripts
+# Aliases for my shell scripts
 alias wt="~/shell_scripts/weather"
 alias motd="~/shell_scripts/motd"
 alias change_volume="~/shell_scripts/change_volume"
