@@ -17,12 +17,8 @@ This is now my current default, found at the `wayland` branch. This uses the [ri
 I use my own Neovim configs that uses the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager and found at [this repo](https://github.com/jumpyjacko/nvim).
 
 ## Gallery
-![desktop_tiled](./images/desktop_tiled.png)
+![desktop_tiled](./images/wayland_desktop.png)
 
-![desktop_floating](./images/desktop_floating.png)
+![desktop_launcher](./images/wayland_tofi.png)
 
-![desktop](./images/desktop.png)
-
-### Extras
-#### ncmpcpp (Music Player)
-![ncmpcpp](./images/ncmpcpp.png)
+![desktop](./images/wayland_blank_desktop.png)
