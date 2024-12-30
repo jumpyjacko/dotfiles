@@ -1,23 +1,28 @@
+# zmodload zsh/zprof
+
 # Enabling tab-autocomplete
-autoload -Uz compinit && compinit
-zstyle ":completion;*" menu select
+# autoload -Uz compinit && compinit
+# zstyle ":completion;*" menu select
 
 # Enabling version control information
 autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
+precmd_vcs_info() {
+    if [[ -d .git || $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]]; then
+        vcs_info
+    else
+        vcs_info_msg_0_=''
+    fi
+}
 precmd_functions+=( precmd_vcs_info )
 
 # Formats vcs_info message
-zstyle ':vcs_info:git:*' formats ' %f%F{1} %f%F{2}%b'
+zstyle ':vcs_info:git:*' formats ' %F{1} %F{2}%b'
 
 # Enabling and setting custom prompt (thanks zsh prompt generator)
-autoload -Uz promptinit && promptinit
+# autoload -Uz promptinit && promptinit
 setopt prompt_subst
 PROMPT="%F{8}[%f%F{2}%n%f%F{5}@%f%F{4}%m%f %~%F{8}\$vcs_info_msg_0_%f%F{8}]%f%F{8}$%f "
 RPROMPT=$'%F{8}[%f%?%F{8}] %{\e[3m%}%*%{\e[0m%}%f'
-
-# Adding fish-like auto-suggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Editor Exports
 export EDITOR=nvim
@@ -37,7 +42,7 @@ export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -124,3 +129,5 @@ alias change_volume="~/shell_scripts/change_volume"
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# zprof
