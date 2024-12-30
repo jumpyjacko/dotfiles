@@ -1,9 +1,5 @@
 # zmodload zsh/zprof
 
-# Enabling tab-autocomplete
-# autoload -Uz compinit && compinit
-# zstyle ":completion;*" menu select
-
 # Enabling version control information
 autoload -Uz vcs_info
 precmd_vcs_info() {
@@ -42,7 +38,6 @@ export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
-# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -127,7 +122,12 @@ alias wt="~/shell_scripts/weather"
 alias motd="~/shell_scripts/motd"
 alias change_volume="~/shell_scripts/change_volume"
 
-eval "$(atuin init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd load_late
+
+load_late() {
+    eval "$(atuin init zsh)"
+    eval "$(zoxide init --cmd cd zsh)"
+}
 
 # zprof
