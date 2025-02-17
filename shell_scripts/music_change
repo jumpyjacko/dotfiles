@@ -23,7 +23,7 @@ if kitten icat --detect-support &>/dev/null; then
   window_width=$(echo $window_size | cut -d' ' -f2)
   spacing_from_edge_x=2
 
-  image_size=50
+  image_size=70
 
   x_pos=$((window_width - image_size - spacing_from_edge_x))
   y_pos=$((window_height - (image_size / 2)))
