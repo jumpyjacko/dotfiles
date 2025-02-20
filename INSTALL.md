@@ -145,7 +145,7 @@ Change some configuration like input devices, etc.
 # Installing the Graphical Environment (Xorg)
 Switch to the `xorg` branch of this repo.
 ## Packages
-```
+```sh
 sudo pacman -S xorg xorg-server xorg-apps xorg-xinit dmenu
 ```
 

@@ -2,7 +2,7 @@
 A nice and minimal setup that does everything I need, with a very simple theme.
 
 #### How could I go about and use these?
-Read [INSTALL.md](https://github.com/jumpyjacko/dotfiles/blob/main/INSTALL.md).
+Read [INSTALL.md](./INSTALL.md).
 > Note: Mostly filled with commands for me so that I don't have to remember what I need.
 
 #### Window manager
