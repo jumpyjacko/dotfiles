@@ -32,6 +32,12 @@ riverctl rule-add -app-id "Migu" ssd
 riverctl rule-add -app-id "thunar" ssd
 riverctl rule-add -app-id "localsend" ssd
 riverctl rule-add -app-id "org.pwmt.zathura" ssd
+riverctl rule-add -app-id "libreoffice-calc" ssd
+
+# Emulation window management improvements
+riverctl rule-add -app-id "es-de" no-float
+riverctl rule-add -app-id "com.libretro.RetroArch" fullscreen
+riverctl rule-add -app-id "dolphin-emu" fullscreen
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
@@ -42,6 +48,7 @@ rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.55 &
 riverctl map normal Super Return spawn kitty
 riverctl map normal Super Space spawn "tofi-drun --drun-launch=true"
 riverctl map normal Super+Shift S spawn 'grim -g "$(slurp -d)" - | wl-copy'
+riverctl map normal Super+Shift+Control S spawn 'grim - | wl-copy'
 
 riverctl map normal Super W close
 riverctl map normal Super+Shift Q exit
@@ -142,8 +149,8 @@ riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
 for mode in normal locked
 do
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 2'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 2'
     riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
 
     riverctl map $mode None XF86AudioPrev         spawn 'mpc prev'

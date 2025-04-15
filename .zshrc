@@ -103,6 +103,8 @@ alias sr="exec river"
 alias e="nvim"
 alias sudoe="sudo -E -s nvim"
 
+alias list_packages="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+
 alias t="tmux"
 alias ta="tmux attach -d -t"
 alias tn="tmux new-session -A -s"
