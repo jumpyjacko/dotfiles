@@ -3,7 +3,7 @@
 msg_tag="monitor_brightness"
 
 current_display=$(wlr-randr | awk 'NR==1{print $1}')
-increment_value="5%"
+increment_value="2%"
 
 increment_brightness() {
   brightnessctl set +$increment_value
