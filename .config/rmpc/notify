@@ -1,21 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 msg_tag="mpd_event"
-
-noti_body=$(mpc toggle)
-noti_body=$(echo "$noti_body" | sed '$d')
-# noti_body=$(echo "$noti_body" | sed -E 's/\[paused\]//; s/\[playing\]//')
-
-progress=$(echo "$noti_body" | grep -oP '\(\K\d+(?=%)')
 
 # Directory where to store temporary data
 TMP_DIR="/tmp/rmpc"
 
+
 # Ensure the directory is created
 mkdir -p "$TMP_DIR"
 
+
 # Where to temporarily store the album art received from rmpc
 ALBUM_ART_PATH="$TMP_DIR/notification_cover"
+
 
 # Path to fallback album art if no album art is found by rmpc/mpd
 # Change this to your needs
@@ -30,4 +27,6 @@ if ! rmpc albumart --output "$ALBUM_ART_PATH"; then
 
 fi
 
-dunstify -a "​" -h string:x-dunst-stack-tag:"$msg_tag" -h int:value:"$progress" "$noti_body" -i ${ALBUM_ART_PATH}
+
+# Send the notification
+dunstify -a "$(mpc --format "%artist%" current)" "$(mpc --format '\n%title%' current)" -h string:x-dunst-stack-tag:"$msg_tag" -i ${ALBUM_ART_PATH}
