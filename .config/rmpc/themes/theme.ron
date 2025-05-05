@@ -29,7 +29,7 @@
         thumb_style: (fg: "green", bg: None),
     ),
     scrollbar: (
-        symbols: ["│", "█", "▲", "▼"],
+        symbols: [" ", " ", " ", " "],
         track_style: (),
         ends_style: (),
         thumb_style: (fg: "white"),

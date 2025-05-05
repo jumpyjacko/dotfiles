@@ -30,7 +30,7 @@
         thumb_style: (fg: "green", bg: None),
     ),
     scrollbar: (
-        symbols: ["", "", "", ""],
+        symbols: [" ", " ", " ", " "],
         track_style: (),
         ends_style: (),
         thumb_style: (),
@@ -62,7 +62,7 @@
             (
                 left: [
                     (kind: Text("["), style: (fg: "white", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "blue", modifiers: "Bold")),
                     (kind: Text("]"), style: (fg: "white", modifiers: "Bold"))
                 ],
                 center: [
