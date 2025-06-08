@@ -28,7 +28,7 @@ riverctl rule-add -app-id "bar" csd
 
 # Make various apps use Server Side Decorations
 riverctl rule-add -app-id "zen" ssd
-riverctl rule-add -app-id "Migu" ssd
+riverctl rule-add -app-id "shiru" ssd
 riverctl rule-add -app-id "thunar" ssd
 riverctl rule-add -app-id "localsend" ssd
 riverctl rule-add -app-id "org.pwmt.zathura" ssd
