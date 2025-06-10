@@ -3,16 +3,15 @@ font-size = 16
 hint-font = false
 late-keyboard-init = true
 
-width = 50%
-height = 50%
-border-width = 2
-border-color = #bbbbbb
+width = 100%
+height = 100%
+padding-left=35%
+padding-top=35%
+border-width = 0
 outline-width = 0
-padding-left = 5%
-padding-top = 5%
 result-spacing = 25
 num-results = 7
-background-color = #1d1f21
+background-color = #0008
 
 selection-color = #eeeeee
-default-result-color = #444444
+default-result-color = #bbbbbb
