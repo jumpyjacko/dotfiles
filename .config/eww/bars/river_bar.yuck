@@ -1,0 +1,120 @@
+(include "./widgets/backlight.yuck")
+(include "./widgets/battery.yuck")
+(include "./widgets/time.yuck")
+(include "./widgets/volume.yuck")
+(include "./widgets/kernel.yuck")
+
+(deflisten tags `while true; do ristate -t | jq '.tags[][]' -r --unbuffered; sleep 1s; done`)
+
+(defwindow river
+  :monitor 0
+  :exclusive "true"
+  :focusable "false"
+  :stacking "bottom"
+  :geometry (geometry :x "0px"
+                      :y "0px"
+                      :width "100%"
+                      :height "44px"
+                      :anchor "top center")
+  (river_bar)
+)
+
+(defwidget river_bar []
+  (box :class "river"
+       :orientation "h"
+    (left)
+    (middle)
+    (right)
+  )
+)
+
+(defwidget left []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "start"
+       :class "left_modules"
+    (tag_indicator)
+  )
+)
+
+(defwidget middle []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "center"
+       :class "middle_modules"
+    (h_time)
+  )
+)
+
+(defwidget right []
+  (box :orientation "horizontal"
+       :space-evenly false
+       :halign "end"
+       :class "right_modules"
+    (h_volume)
+    (sep)
+    (h_backlight)
+    (sep)
+    (h_battery)
+    (sep)
+    (kernel)
+  )
+)
+
+(defwidget sep []
+  (box :class "module-2"
+       :vexpand false
+       :hexpand false
+    (label :class "separ"
+           :text "|"
+    )
+  )
+)
+
+(defwidget tag_indicator []
+	(box 
+		:orientation "h"
+		:halign "start"
+		:class "tag-indicator-box"
+	(eventbox
+		:onscroll "./scripts/river-scroll.sh {} ${tags}"
+	(box
+		:space-evenly "true"
+		:spacing 15
+	(button
+		:onclick "riverctl set-focused-tags 1"
+		:class {tags == "1" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "1" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 2"
+		:class {tags == "2" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "2" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 4"
+		:class {tags == "3" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "3" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 8"
+		:class {tags == "4" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "4" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 16"
+		:class {tags == "5" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "5" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 32"
+		:class {tags == "6" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "6" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 64"
+		:class {tags == "7" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "7" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 128"
+		:class {tags == "8" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "8" ? "-" : "o"}))
+	(button
+		:onclick "riverctl set-focused-tags 256"
+		:class {tags == "9" ? "tag-active" : "tag-inactive"}
+	(label :text {tags != "9" ? "-" : "o"}))
+	))))

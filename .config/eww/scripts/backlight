@@ -1,13 +1,7 @@
 #!/bin/bash
 
-# Prints the backlight percentage
-# Requires the light package
+current=$(brightnessctl g)
+max=$(brightnessctl m)
+percent=$((100 * current / max))
 
-PREFIX=''
-
-get_backlight()
-{
-    echo "$PREFIX $(((100 * $(brightnessctl g) / $(brightnessctl m))))%"
-}
-
-get_backlight
+echo "{\"percent\": $percent}"

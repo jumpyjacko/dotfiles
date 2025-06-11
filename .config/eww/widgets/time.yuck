@@ -1,0 +1,21 @@
+(defpoll clock_hour   :interval "1m"  "date +\%H")
+(defpoll clock_minute :interval "1s"  "date +\%M")
+(defpoll clock_date   :interval "10h" "date '+%d/%m'")
+
+(defwidget h_time []
+  (box :class "module"
+       :space-evenly false
+       :orientation "horizontal"
+       :spacing "3"
+    (label :text "${clock_hour}:${clock_minute}")
+    (sep)
+    (label :text clock_date)
+  )
+)
+
+(defwidget v_time []
+    (box :orientation "vertical"
+        (label :text clock_hour)
+        (label :text clock_minute)
+    )
+)

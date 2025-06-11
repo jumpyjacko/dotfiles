@@ -11,7 +11,7 @@ border-width = 0
 outline-width = 0
 result-spacing = 25
 num-results = 7
-background-color = #0008
+background-color = #000B
 
 selection-color = #eeeeee
 default-result-color = #bbbbbb

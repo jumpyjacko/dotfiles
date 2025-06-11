@@ -1,5 +1,5 @@
 input {
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="30%"
     workspace-auto-back-and-forth
     
     keyboard {
@@ -52,7 +52,7 @@ layout {
         active-color "#bbbbbb"
         inactive-color "#444444"
 
-        urgent-gradient from="#444444" to="#bf616a" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        urgent-gradient from="#bbbbbb" to="#bf616a" angle=45 relative-to="workspace-view" in="oklch longer hue"
     }
 
     shadow { }
@@ -66,10 +66,14 @@ layout {
         length total-proportion=1.0
         place-within-column
     }
+
+    insert-hint {
+        color "#bbbbbb40"
+    }
 }
 
 overview {
-    zoom 0.8
+    zoom 0.5
     backdrop-color "#000000"
 }
 
@@ -101,6 +105,17 @@ animations {
 window-rule {
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+// Windows to open maximized
+window-rule {
+    match app-id="zen"
+    match app-id="Chromium"
+    match app-id="legcord"
+    match app-id="blender"
+    match app-id=r#"MuseScore*"#
+    match app-id="shiru"
+    open-maximized true
 }
 
 window-rule {
@@ -232,18 +247,8 @@ binds {
     Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
-    // Finer width adjustments.
-    // This command can also:
-    // * set width in pixels: "1000"
-    // * adjust width in pixels: "-5" or "+5"
-    // * set width as a percentage of screen width: "25%"
-    // * adjust width as a percentage of screen width: "-10%" or "+10%"
-    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
-    // set-column-width "100" will make the column occupy 200 physical screen pixels.
     Mod+Minus { set-column-width "-5%"; }
     Mod+Equal { set-column-width "+5%"; }
 

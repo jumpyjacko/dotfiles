@@ -1,0 +1,52 @@
+(defpoll battery :interval "5s" "$HOME/.config/eww/scripts/battery")
+
+(defwidget h_battery []
+  (box :class "battery"
+       :vexpand false
+       :hexpand false
+    (label :text {
+      battery.charging == "Charging" ? " ${battery.percentage}" :
+      battery.percentage < 20 ? " ${battery.percentage}" :
+      battery.percentage < 30 ? " ${battery.percentage}" :
+      battery.percentage < 50 ? " ${battery.percentage}" :
+      battery.percentage < 80 ? " ${battery.percentage}" : " ${battery.percentage}"
+    })
+  )
+)
+
+(defvar battery_hover false)
+(defwidget v_battery []
+    (eventbox :onhover "${eww} update battery_hover=true"
+              :onhoverlost "${eww} update battery_hover=false"
+        (box :orientation "vertical"
+             :space-evenly false
+             :spacing "5"
+            (revealer :transition "slideup"
+                      :reveal battery_hover
+                      :duration "200ms"
+                (box :orientation "vertical"
+                    (label :text "${battery.percentage}%"
+                           :class "bat-text"
+                    )
+                    (scale :class "h-slider"
+                           :value {battery.percentage} 
+                           :orientation "horizontal"
+                           :max 101
+                           :min 0
+                    )
+                )
+            )
+            (label :text {
+                battery.charging == "Charging" ? "" :
+                battery.percentage < 20 ? "󰁺" :
+                battery.percentage < 30 ? "󰁻" :
+                battery.percentage < 40 ? "󰁼" :
+                battery.percentage < 50 ? "󰁽" :
+                battery.percentage < 60 ? "󰁿" :
+                battery.percentage < 70 ? "󰂀" :
+                battery.percentage < 80 ? "󰂁" :
+                battery.percentage < 90 ? "󰂂" : "󰁹"
+            })
+        )
+    )
+)

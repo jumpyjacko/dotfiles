@@ -1,0 +1,62 @@
+(include "./widgets/volume.yuck")
+(include "./widgets/battery.yuck")
+(include "./widgets/backlight.yuck")
+(include "./widgets/niri_workspaces.yuck")
+(include "./widgets/time.yuck")
+
+;; Setup Bar
+(defwindow niri
+    :monitor 0
+    :exclusive "true"
+    :focusable "false"
+    :stacking "background"
+    :geometry (geometry :x "8px"
+                        :y "0px"
+                        :width "44px"
+                        :height "95%"
+                        :anchor "left center")
+    (niri_bar)
+)
+
+(defwidget niri_bar []
+    (box :class "niri"
+         :orientation "vertical"
+         (top)
+         (middle)
+         (bottom)
+    )
+)
+
+(defwidget top []
+    (box :class "island"
+         :orientation "vertical"
+         :space-evenly false
+         :valign "start"
+         
+        (workspaces)
+    )
+)
+
+(defwidget middle []
+    (box :class "island"
+         :orientation "vertical"
+         :space-evenly false
+         :valign "center"
+
+        (v_time)
+    )
+)
+
+(defwidget bottom []
+    (box :class "island"
+         :orientation "vertical"
+         :space-evenly false
+         :spacing 15
+         :valign "end"
+         
+        (v_backlight)
+        (v_volume)
+        (v_battery)
+    )
+)
+
