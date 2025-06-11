@@ -5,6 +5,11 @@
   font-size: 18px;
 }
 
+$background: #1d1f21;
+$active: #bbbbbb;
+$inactive: #444444;
+$trough: #333333;
+
 .river {
   /* background-color: #222222; */
   background-color: transparent;
@@ -29,19 +34,37 @@
   }
 }
 
-.niri {
-  background-color: #1d1f21;
-  border-radius: 16px;
-  padding: 8px;
+tooltip {
+  padding: 5px;
+  background-color: $background; 
+  border-radius: 8px;
   border-style: solid;
   border-width: 2px;
-  border-color: #444444;
+  border-color: $inactive;
+}
 
-  color: #bbbbbb;
+menu {
+  padding: 5px;
+  background-color: $background;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $inactive;
+}
+
+.niri {
+  background-color: $background;
+  padding: 8px;
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $inactive;
+
+  color: $active;
 
   scale trough {
     all: unset;
-    background-color: #333333;
+    background-color: $trough;
     border-radius: 4px;
     min-height: 100px;
     min-width: 8px;
@@ -49,7 +72,7 @@
   }
   
   scale trough highlight {
-    background-color: #bbbbbb;
+    background-color: $active;
     border-radius: 5px;
   }
 

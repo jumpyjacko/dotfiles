@@ -1,0 +1,9 @@
+(defwidget v_systray []
+    (box :orientation "vertical"
+         :spacing "5"
+        (systray :orientation "vertical"
+                 :spacing "5"
+                 :prepend-new false
+        )
+    )
+)
