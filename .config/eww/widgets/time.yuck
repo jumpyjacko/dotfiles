@@ -1,6 +1,7 @@
 (defpoll clock_hour   :interval "1m"  "date +\%H")
 (defpoll clock_minute :interval "1s"  "date +\%M")
-(defpoll clock_date   :interval "10h" "date '+%d/%m'")
+(defpoll clock_date   :interval "1h" "date '+%d/%m'")
+(defpoll clock_jp_date :interval "1h" "$HOME/.config/eww/scripts/jp_date")
 
 (defwidget h_time []
   (box :class "module"
@@ -17,5 +18,13 @@
     (box :orientation "vertical"
         (label :text clock_hour)
         (label :text clock_minute)
+    )
+)
+
+(defwidget v_date []
+    (box :orientation "vertical"
+        (label :class "jp-date"
+               :text clock_jp_date
+        )
     )
 )

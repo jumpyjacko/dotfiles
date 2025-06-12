@@ -14,6 +14,7 @@
         (box :orientation "vertical"
              :space-evenly false
              :spacing "5"
+             :tooltip "Brightness: ${backlight.percent}%"
             (revealer :transition "slideup"
                       :reveal backlight_hover
                       :duration "200ms"

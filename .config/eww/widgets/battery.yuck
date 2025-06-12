@@ -21,6 +21,7 @@
         (box :orientation "vertical"
              :space-evenly false
              :spacing "5"
+             :tooltip "Battery: ${battery.percentage}%"
             (revealer :transition "slideup"
                       :reveal battery_hover
                       :duration "200ms"
@@ -33,6 +34,7 @@
                            :orientation "horizontal"
                            :max 101
                            :min 0
+                           :active false
                     )
                 )
             )

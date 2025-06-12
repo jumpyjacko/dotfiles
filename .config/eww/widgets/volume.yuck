@@ -14,6 +14,7 @@
         (box :orientation "vertical"
              :space-evenly false
              :spacing "5"
+             :tooltip "Volume: ${volume.volume}%"
             (revealer :transition "slideup"
                       :reveal vol_hover
                       :duration "200ms"

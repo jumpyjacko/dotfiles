@@ -3,8 +3,9 @@
 (include "./widgets/backlight.yuck")
 (include "./widgets/niri_workspaces.yuck")
 (include "./widgets/time.yuck")
+(include "./widgets/systray.yuck")
+(include "./widgets/power.yuck")
 
-;; Setup Bar
 (defwindow niri
     :monitor 0
     :exclusive "true"
@@ -32,6 +33,7 @@
          :orientation "vertical"
          :space-evenly false
          :valign "start"
+         :halign "center"
          
         (workspaces)
     )
@@ -41,22 +43,28 @@
     (box :class "island"
          :orientation "vertical"
          :space-evenly false
+         :spacing "50"
          :valign "center"
+         :halign "center"
 
         (v_time)
+        (v_date)
     )
 )
 
 (defwidget bottom []
-    (box :class "island"
+    (box :class "bottom-island"
          :orientation "vertical"
          :space-evenly false
          :spacing 15
          :valign "end"
+         :halign "fill"
          
+        (v_systray)
         (v_backlight)
         (v_volume)
         (v_battery)
+        (power)
     )
 )
 

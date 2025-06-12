@@ -52,7 +52,7 @@ layout {
         active-color "#bbbbbb"
         inactive-color "#444444"
 
-        urgent-gradient from="#bbbbbb" to="#bf616a" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        urgent-gradient from="#afa1aa" to="#bf616a" angle=45 relative-to="workspace-view" in="oklch longer hue"
     }
 
     shadow { }

@@ -1,0 +1,48 @@
+(defwidget power []
+    (button :onclick "${eww} open power_menu"
+        (label :text "⏻")
+    )
+)
+
+(defwindow power_menu
+    :monitor 0
+    :exclusive "false"
+    :focusable "false"
+    :stacking "fg"
+    :geometry (geometry :x "50%"
+                        :y "50%"
+                        :anchor "center center")
+    (power_layout)
+)
+
+(defwidget power_layout []
+    (box :class "powermenu"
+         :valign "center"
+         :space-evenly false
+         :spacing 25
+         
+         (menu_button :icon "⏻"
+                      :text "shutdown"
+                      :clickevent "shutdown -h now"
+         )
+         (menu_button :icon ""
+                      :text "reboot"
+                      :clickevent "shutdown -r now"
+         )
+         (menu_button :icon "󰈆"
+                      :text "cancel"
+                      :clickevent "${eww} close power_menu"
+         )
+    )
+)
+
+(defwidget menu_button [icon text clickevent]
+    (button :onclick clickevent 
+            :width 200
+            :height 200
+        (box :orientation "vertical"
+            (label :class "icon" :text icon)
+            (label :class "text" :text text)
+        )
+    )
+)

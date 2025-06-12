@@ -1,11 +1,12 @@
 /* Overall Styles */
 * {
   all: unset;
-  font-family: mononoki Nerd Font;
+  font-family: mononoki Nerd Font Propo;
   font-size: 18px;
 }
 
 $background: #1d1f21;
+$transparent-background: rgba(29, 31, 33, 0.95);
 $active: #bbbbbb;
 $inactive: #444444;
 $trough: #333333;
@@ -44,7 +45,7 @@ tooltip {
 }
 
 menu {
-  padding: 5px;
+  padding: 8px;
   background-color: $background;
   border-radius: 8px;
   border-style: solid;
@@ -53,8 +54,9 @@ menu {
 }
 
 .niri {
-  background-color: $background;
-  padding: 8px;
+  /* background-color: $background; */
+  background-color: transparent;
+  padding: 4px;
   border-radius: 16px;
   border-style: solid;
   border-width: 2px;
@@ -87,5 +89,38 @@ menu {
 
   .workspace {
     font-size: 20px;
+  }
+
+  .bottom-island {
+    padding-bottom: 8px;
+  }
+
+}
+
+.powermenu {
+  margin: 50px;
+  color: $active;
+  
+  button {
+    background-color: $transparent-background;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $inactive;
+    opacity: 0.5;
+
+    transition: all 0.5s;
+    
+    padding: 20px;
+
+    box-shadow: 0px 0px 20px #121212;
+
+    .icon {
+      font-size: 3em;
+    }
+  }
+
+  button:hover {
+    opacity: 1;
   }
 }
