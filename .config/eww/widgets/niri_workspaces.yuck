@@ -9,6 +9,7 @@
         (for ws in workspaces
             (button :onclick "niri msg action focus-workspace ${ws.id}" 
                 (label :class "workspace"
+                       :style {ws.active_window_id == "null" ? "color: #444444" : ""}
                        :text {
                     ws.is_focused == true ? "" : ""
                 })
