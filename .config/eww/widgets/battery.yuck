@@ -22,7 +22,11 @@
              :space-evenly false
              :spacing "5"
              :tooltip "Battery: ${battery.percentage}%"
-             :style {battery.percentage < 20 ? "color: #bf616a" : ""}
+             :style {
+                battery.percentage < 20 ? "color: #bf616a" : 
+                battery.percentage >= 98 ? 
+                    battery.charging == "Charging" ? "color: #a3be8c" : "" : ""
+             }
             (revealer :transition "slideup"
                       :reveal battery_hover
                       :duration "200ms"
