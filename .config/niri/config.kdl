@@ -73,13 +73,14 @@ layout {
 }
 
 overview {
-    zoom 0.5
+    zoom 0.4
     backdrop-color "#000000"
 }
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     DISPLAY ":0"
+    QT_QPA_PLATFORMTHEME "qt5ct"
 }
 
 hotkey-overlay {
@@ -121,6 +122,12 @@ window-rule {
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
+}
+
+gestures {
+    hot-corners {
+        off
+    }
 }
 
 binds {

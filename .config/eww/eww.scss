@@ -60,7 +60,7 @@ menu {
   border-radius: 16px;
   border-style: solid;
   border-width: 2px;
-  border-color: $inactive;
+  border-color: $active;
 
   color: $active;
 
@@ -94,7 +94,6 @@ menu {
   .bottom-island {
     padding-bottom: 8px;
   }
-
 }
 
 .powermenu {
@@ -102,14 +101,14 @@ menu {
   color: $active;
   
   button {
-    background-color: $transparent-background;
+    background-color: black;
     border-radius: 8px;
     border-style: solid;
     border-width: 2px;
     border-color: $inactive;
     opacity: 0.9;
 
-    transition: all 0.5s;
+    transition: all 0.2s;
     
     padding: 20px;
 
@@ -118,9 +117,5 @@ menu {
     .icon {
       font-size: 3em;
     }
-  }
-
-  button:hover {
-    opacity: 1;
   }
 }

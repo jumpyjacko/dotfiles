@@ -15,6 +15,7 @@
              :space-evenly false
              :spacing "5"
              :tooltip "Volume: ${volume.volume}%"
+             :style {volume.muted == "yes" ? "color: #bf616a" : ""}
             (revealer :transition "slideup"
                       :reveal vol_hover
                       :duration "200ms"
