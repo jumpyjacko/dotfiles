@@ -60,8 +60,9 @@ menu {
   border-radius: 16px;
   border-style: solid;
   border-width: 2px;
-  border-color: $active;
+  border-color: $inactive;
 
+  transition: all 0.2s;
   color: $active;
 
   scale trough {
