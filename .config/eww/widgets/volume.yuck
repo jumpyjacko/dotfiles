@@ -11,6 +11,7 @@
 (defwidget v_volume []
     (eventbox :onhover "${eww} update vol_hover=true"
               :onhoverlost "${eww} update vol_hover=false"
+              :onscroll "$HOME/.config/eww/scripts/vol-scroll {}"
         (box :orientation "vertical"
              :space-evenly false
              :spacing "5"

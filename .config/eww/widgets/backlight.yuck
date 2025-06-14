@@ -11,6 +11,7 @@
 (defwidget v_backlight []
     (eventbox :onhover "${eww} update backlight_hover=true"
               :onhoverlost "${eww} update backlight_hover=false"
+              :onscroll "$HOME/.config/eww/scripts/backlight-scroll {}"
         (box :orientation "vertical"
              :space-evenly false
              :spacing "5"
