@@ -50,3 +50,25 @@
         )
     )
 )
+
+(defvar power_hover false)
+(defwidget v_power []
+    (eventbox :onhover "${eww} update power_hover=true"
+              :onhoverlost "${eww} update power_hover=false"
+        (box :orientation "vertical"
+             :space-evenly false
+             :spacing "5"
+            (revealer :transition "slideup"
+                      :reveal power_hover
+                      :duration "200ms"
+                (button :onclick "shutdown -r now"
+                    (label :text "")
+                )
+            )
+            (button :onclick "shutdown -h now"
+                    :class "power-button"
+                (label :text "⏻")
+            )
+        )
+    )
+)

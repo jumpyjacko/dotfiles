@@ -12,10 +12,10 @@
     :exclusive "true"
     :focusable "false"
     :stacking "background"
-    :geometry (geometry :x "8px"
+    :geometry (geometry :x "0px"
                         :y "0px"
                         :width "44px"
-                        :height "90%"
+                        :height "100%"
                         :anchor "left center")
     (eventbox :onhover "${eww} update bar_hover=true"
               :onhoverlost "${eww} update bar_hover=false"
@@ -69,7 +69,7 @@
         (v_backlight)
         (v_volume)
         (v_battery)
-        (power)
+        (v_power)
     )
 )
 

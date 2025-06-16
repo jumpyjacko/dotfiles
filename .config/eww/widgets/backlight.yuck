@@ -28,7 +28,9 @@
                        :onchange "brightnessctl set {}%"
                 )
             )
-            (label :text "󰌵")
+            (button :onclick "niri msg action power-off-monitors"
+                (label :text "󰌵")
+            )
         )
     )
 )
