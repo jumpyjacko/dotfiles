@@ -12,8 +12,8 @@
     :exclusive "true"
     :focusable "false"
     :stacking "background"
-    :geometry (geometry :x "0px"
-                        :y "0px"
+    :geometry (geometry :x "0%"
+                        :y "0%"
                         :width "44px"
                         :height "100%"
                         :anchor "left center")

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+COLOUR=$(niri msg -j pick-color | jq -r '.rgb | map((. * 255) | round | floor) | @sh' | xargs -n3 bash -c 'printf "#%02X%02X%02X" "$0" "$1" "$2"')
+
+echo $COLOUR
+
+ICON_PATH="/tmp/colour-circle.png"
+
+magick -size 32x32 xc:none -fill "$COLOUR" -draw "circle 16,16 16,0" "$ICON_PATH"
+notify-send "Colour Picker" "Copied $COLOUR to clipboard!" --icon="$ICON_PATH"
+
+wl-copy $COLOUR

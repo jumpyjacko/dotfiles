@@ -1,0 +1,5 @@
+#!/bin/bash
+
+niri msg action spawn -- "kitty" && \
+sleep 0.3 && \
+niri msg action consume-or-expel-window-left

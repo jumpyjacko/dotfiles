@@ -133,9 +133,12 @@ gestures {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space    hotkey-overlay-title="Run an Application: drun" { spawn "tofi-drun" "--drun-launch=true"; }
-    Super+Escape hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
+    Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
+    Mod+Space    hotkey-overlay-title="Run an Application: drun" repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
+    Super+Escape hotkey-overlay-title="Lock the Screen: hyprlock" repeat=false { spawn "hyprlock"; }
+    Super+Shift+Return repeat=false { spawn "~/.config/niri/spawn_in_column"; }
+
+    Super+Shift+C repeat=false { spawn "~/.config/niri/pick_color"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "pamixer" "-i" "2"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "pamixer" "-d" "2"; }
