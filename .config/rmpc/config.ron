@@ -7,6 +7,7 @@
     theme: Some("theme"),
     cache_dir: None,
     on_song_change: ["~/.config/rmpc/scripts/notify"],
+    on_resize: ["~/.config/rmpc/scripts/resize"],
     volume_step: 1,
     max_fps: 30,
     scrolloff: 0,

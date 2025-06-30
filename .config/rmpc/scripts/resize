@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ $COLUMNS -gt 100 ]]; then
+read rows cols < <(stty size < /dev/tty)
+if [[ $cols -gt 120 ]]; then
     rmpc remote --pid "$PID" set theme ~/.config/rmpc/themes/theme.ron
-    rmpc remote --pid "$PID" status "Big theme set"
+    rmpc remote --pid "$PID" status "Big theme set ($cols columns)"
 else
+    echo $cols
     rmpc remote --pid "$PID" set theme ~/.config/rmpc/themes/small.ron
-    rmpc remote --pid "$PID" status "Small theme set"
+    rmpc remote --pid "$PID" status "Small theme set ($cols columns)"
 fi
