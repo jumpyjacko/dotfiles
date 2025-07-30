@@ -17,7 +17,7 @@ zstyle ':vcs_info:git:*' formats ' %F{1} %F{2}%b'
 # Enabling and setting custom prompt (thanks zsh prompt generator)
 # autoload -Uz promptinit && promptinit
 setopt prompt_subst
-PROMPT="%F{8}[%f%F{2}%n%f%F{5}@%f%F{4}%m%f %~%F{8}\$vcs_info_msg_0_%f%F{8}]%f%F{8}$%f "
+PROMPT="%F{8}[%f%F{2}%n%f%F{8}@%f%F{4}%m%f %~%F{8}\$vcs_info_msg_0_%f%F{8}]%f%F{8}$%f "
 RPROMPT=$'%F{8}[%f%?%F{8}] %{\e[3m%}%*%{\e[0m%}%f'
 
 # Editor Exports
