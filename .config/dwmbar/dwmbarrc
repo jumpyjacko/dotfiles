@@ -1,9 +1,0 @@
-#!/bin/bash
-
-MODULES="time date wifi volume backlight battery kernel"
-
-DELAY="0.05"
-
-SEPARATOR=" | "
-RIGHT_PADDING=" "
-LEFT_PADDING=" "
