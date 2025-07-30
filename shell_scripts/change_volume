@@ -5,7 +5,7 @@
 msg_tag="computer_volume"
 
 # Specify the increment or decrement amount (you can adjust this as needed)
-increment_amount=5
+increment_amount=2
 
 # Get the current volume and whether or not the speaker is muted
 current_volume=$(pamixer --get-volume)

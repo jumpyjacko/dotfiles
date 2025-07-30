@@ -5,7 +5,6 @@ input {
     keyboard {
         xkb {
             layout "us"
-            variant "colemak"
             options "compose:ralt"
         }
         repeat-delay 300
