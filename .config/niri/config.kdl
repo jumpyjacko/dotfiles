@@ -5,6 +5,7 @@ input {
     keyboard {
         xkb {
             layout "us"
+            variant "colemak"
             options "compose:ralt"
         }
         repeat-delay 300
@@ -27,6 +28,14 @@ output "eDP-1" {
     mode "3840x2160"
     scale 1.5
     transform "normal"
+    position x=0 y=0
+}
+
+output "DP-2" {
+    // off
+    mode "2560x1440"
+    scale 1
+    position x=0 y=-1440
 }
 
 layout {
@@ -80,17 +89,17 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     DISPLAY ":0"
     QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_SCALE_FACTOR "1"
 }
 
 hotkey-overlay {
     skip-at-startup
 }
 
-spawn-at-startup "~/.config/river/background.sh"
+spawn-at-startup "~/.config/niri/background.sh"
 spawn-at-startup "~/.config/eww/launch_bar"
 spawn-at-startup "dunst"
 spawn-at-startup "fcitx5"
-
 spawn-at-startup "xwayland-satellite"
 
 prefer-no-csd
@@ -139,9 +148,9 @@ binds {
 
     Super+Shift+C repeat=false { spawn "~/.config/niri/pick_color"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "pamixer" "-i" "2"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "pamixer" "-d" "2"; }
-    XF86AudioMute        allow-when-locked=true { spawn "pamixer" "--toggle-mute"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/shell_scripts/change_volume" "up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "~/shell_scripts/change_volume" "down"; }
+    XF86AudioMute        allow-when-locked=true { spawn "~/shell_scripts/change_volume" "mute"; }
     XF86AudioPrev        allow-when-locked=true { spawn "mpc" "prev"; }
     XF86AudioPlay        allow-when-locked=true { spawn "~/shell_scripts/music_toggle"; }
     XF86AudioNext        allow-when-locked=true { spawn "mpc" "next"; }
