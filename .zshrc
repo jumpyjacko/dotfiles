@@ -18,7 +18,6 @@ zstyle ':vcs_info:git:*' formats ' %F{1} %F{2}%b'
 # autoload -Uz promptinit && promptinit
 setopt prompt_subst
 PROMPT="%F{8}[%f%F{2}%n%f%F{8}@%f%F{4}%m%f %~%F{8}\$vcs_info_msg_0_%f%F{8}]%f%F{8}$%f "
-RPROMPT=$'%F{8}[%f%?%F{8}] %{\e[3m%}%*%{\e[0m%}%f'
 
 # Editor Exports
 export EDITOR=nvim
@@ -76,12 +75,6 @@ if [ "$TERM" = "linux" ]; then
   clear
 fi
 
-# pfetch config because i'm a degenerate who can't live without a fetch
-export PF_INFO="ascii title os kernel shell pkgs palette"
-export PF_COLOR=1
-export PF_COL1=7
-export PF_COL3=7
-
 export BAT_THEME="ansi"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
@@ -98,8 +91,6 @@ alias serve="serve_alias"
 alias gitslog="git log --pretty=format:'%C(auto)%h %Cblue%ad %Cgreen%s%Creset' --date=iso --graph --decorate --all"
 
 alias p="sudo pacman"
-alias s="startx"
-alias sr="exec river"
 alias e="nvim"
 alias sudoe="sudo -E -s nvim"
 
@@ -112,18 +103,6 @@ alias tk="tmux kill-session -t"
 alias tl="tmux list-sessions"
 
 alias ..="cd .."
-alias ...="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
-alias .5="cd ../../../../.."
-
-# Xorg brightness control
-alias brightness='xrandr --output eDP1 --brightness'
-
-# Aliases for my shell scripts
-alias wt="~/shell_scripts/weather"
-alias motd="~/shell_scripts/motd"
-alias change_volume="~/shell_scripts/change_volume"
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd load_late
@@ -134,3 +113,4 @@ load_late() {
 }
 
 # zprof
+#. /usr/share/nvm/init-nvm.sh
