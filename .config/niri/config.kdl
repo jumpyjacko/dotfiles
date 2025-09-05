@@ -32,10 +32,10 @@ output "eDP-1" {
 }
 
 output "DP-2" {
-    // off
-    mode "2560x1440"
-    scale 1
-    position x=0 y=-1440
+    off
+//     mode "2560x1440"
+//     scale 1
+//     position x=0 y=-1440
 }
 
 layout {
@@ -87,9 +87,8 @@ overview {
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
-    DISPLAY ":0"
     QT_QPA_PLATFORMTHEME "qt5ct"
-    QT_SCALE_FACTOR "1"
+    QT_SCALE_FACTOR "1.25"
 }
 
 hotkey-overlay {
@@ -100,7 +99,7 @@ spawn-at-startup "~/.config/niri/background.sh"
 spawn-at-startup "~/.config/eww/launch_bar"
 spawn-at-startup "dunst"
 spawn-at-startup "fcitx5"
-spawn-at-startup "xwayland-satellite"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 prefer-no-csd
 
