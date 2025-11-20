@@ -7,7 +7,6 @@
     theme: Some("theme"),
     cache_dir: None,
     on_song_change: ["~/.config/rmpc/scripts/notify"],
-    on_resize: ["~/.config/rmpc/scripts/resize"],
     volume_step: 1,
     max_fps: 30,
     scrolloff: 0,
@@ -17,7 +16,6 @@
     select_current_song_on_change: true,
     album_art: (
         method: Auto,
-        max_size_px: (width: 1600, height: 1600),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,
         horizontal_align: Center,
@@ -30,13 +28,16 @@
             ".":       VolumeUp,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
-            "1":       SwitchToTab("Queue"),
+            "1":       SwitchToTab("Home"),
             "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
+            "3":       SwitchToTab("Playlists"),
+            "4":       SwitchToTab("Artists"),
             "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "6":       SwitchToTab("Album Artists"),
+            "7":       SwitchToTab("Genre"),
+            "8":       SwitchToTab("Queue"),
+            "9":       SwitchToTab("Show"),
+            "0":       SwitchToTab("Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -113,37 +114,77 @@
         album_sort_by: Date,
     ),
     tabs: [
-        (
-            name: "Queue",
-            pane: Split(
-                direction: Horizontal,
-                panes: [(size: "60%", pane: Pane(Queue)), (size: "40%", pane: Pane(AlbumArt))],
-            ),
+        (name: "Home", pane: Split(direction: Horizontal, panes: [
+                    (size: "70%", borders: "NONE", pane: Split(direction: Vertical,panes: [
+                                (size: "3", borders: "ALL", pane: Component("custom_song_table_header")),
+                                (size: "100%", borders: "ALL", pane: Pane(Queue)),
+                            ])
+                    ),
+                    (size: "30%", borders: "NONE", pane: Split(direction: Vertical, panes: [
+                                (size: "0.45r", borders: "ALL", pane: Pane(AlbumArt)),
+                                // (size: "15%", borders: "NONE", pane: Pane(Lyrics)),
+                                (size: "100%", borders: "NONE", pane: Pane(Cava)),
+                            ])
+                    ),
+                ])
         ),
-        (
-            name: "Directories",
-            pane: Pane(Directories),
+        (name: "Directories", pane: Split(direction: Horizontal,panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Directories)),
+                ])
         ),
-        (
-            name: "Artists",
-            pane: Pane(Artists),
+        (name: "Playlists", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Playlists)),
+                ])
         ),
-        (
-            name: "Album Artists",
-            pane: Pane(AlbumArtists),
+        (name: "Artists", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Artists)),
+                ])
         ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
+        (name: "Albums", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Albums)),
+                ])
         ),
-        (
-            name: "Playlists",
-            pane: Pane(Playlists),
+        (name: "Album Artists", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(AlbumArtists)),
+                ])
         ),
-        (
-            name: "Search",
-            pane: Pane(Search),
+        (name: "Genre", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Browser(root_tag: "genre", separator: ";"))),
+                ])
+        ),
+        (name: "Queue", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Queue))
+                ])
+        ),
+        (name: "Show",pane: Split(direction: Vertical, panes: [
+                    (size: "50%", pane: Split(direction: Horizontal, panes: [
+                                (size: "22%", borders: "ALL", pane: Pane(Queue)),
+                                (size: "56%", borders: "ALL", pane: Pane(Lyrics)),
+                                (size: "22%", borders: "ALL", pane: Pane(AlbumArt)),
+                            ])
+                    ),
+                    (size: "50%", borders: "ALL", pane: Pane(Cava)),
+                ])
+        ),
+        (name: "Search", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(Search)),
+                ])
         ),
     ],
+    cava: (
+        framerate: 60, autosens: true, sensitivity: 100,
+        lower_cutoff_freq: 50, higher_cutoff_freq: 10000,
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 44100,
+            channels: 2,
+            samble_bits: 16,
+        ),
+        smoothing: (
+            noise_reduction: 35,
+        ),
+        eq: []
+    ),
 )
 
