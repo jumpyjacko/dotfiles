@@ -43,10 +43,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Fcitx5 Exports
 # export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export GLFW_IM_MODULE=ibus
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
+# export QT_IM_MODULE=fcitx
+# export XMODIFIERS=@im=fcitx
+# export GLFW_IM_MODULE=ibus
+# export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
