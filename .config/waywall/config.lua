@@ -22,7 +22,7 @@ local stretched_measure = true
 -- ==== KEYBINDS ====
 -- resolution change actions
 local thin = { key = "*-X", f3_safe = false }
-local wide = { key = "*-G", f3_safe = false }
+local wide = { key = "*-G", f3_safe = true }
 local tall = { key = "*-D", f3_safe = true }
 
 -- startup actions

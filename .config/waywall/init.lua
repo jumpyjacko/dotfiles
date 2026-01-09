@@ -54,7 +54,7 @@ local config = {
         repeat_delay = 300,
         remaps = keyboard_remaps,
         sensitivity = (sens_change.enabled and sens_change.normal) or 1.0,
-        confine_pointer = false,
+        confine_pointer = true,
     },
     theme = {
         background = bg_col,
@@ -565,8 +565,6 @@ config.actions = {
                 remaps_text_config.size)
         end
     end,
-
-
 }
 
 
