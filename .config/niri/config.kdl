@@ -19,7 +19,9 @@ input {
         natural-scroll
     }
 
-    mouse { }
+    mouse { 
+        accel-speed -0.8
+    }
 
     trackpoint { }
 }
