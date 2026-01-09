@@ -89,6 +89,8 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     QT_QPA_PLATFORMTHEME "qt5ct"
     QT_SCALE_FACTOR "1.25"
+
+    QT_IM_MODULE "fcitx"
 }
 
 hotkey-overlay {
@@ -122,7 +124,6 @@ window-rule {
     match app-id="legcord"
     match app-id="blender"
     match app-id=r#"MuseScore*"#
-    match app-id="shiru"
     open-maximized true
 }
 
@@ -137,13 +138,16 @@ gestures {
     }
 }
 
+switch-events {
+    lid-close { spawn "hyprlock"; }
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
     Mod+Space    hotkey-overlay-title="Run an Application: drun" repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
     Super+Escape hotkey-overlay-title="Lock the Screen: hyprlock" repeat=false { spawn "hyprlock"; }
-    Super+Shift+Return repeat=false { spawn "~/.config/niri/spawn_in_column"; }
 
     Super+Shift+C repeat=false { spawn "~/.config/niri/pick_color"; }
 
