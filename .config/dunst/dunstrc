@@ -1,14 +1,14 @@
 [global]
   monitor = 0
   follow = keyboard
-  notification_limit = 5
+  notification_limit = 15
   width = (300, 500)
   origin = top-right
   offset = 10x10
   scale = 0
 
   transparency = 0
-  gap_size = 5
+  gap_size = 2
   padding = 8
   horizontal_padding = 8
   frame_width = 2
