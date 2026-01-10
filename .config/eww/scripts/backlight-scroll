@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [[ $1 == "up" ]]; then
-    brightnessctl set +1%
-fi
-
-if [[ $1 == "down" ]]; then
-    brightnessctl set -1%
-fi

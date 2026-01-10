@@ -99,12 +99,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-at-startup "~/.config/niri/background.sh"
-spawn-at-startup "~/.config/eww/launch_bar"
-spawn-at-startup "dunst"
-spawn-at-startup "fcitx5"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -130,7 +124,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 10 
     clip-to-geometry true
 }
 
@@ -141,27 +135,28 @@ gestures {
 }
 
 switch-events {
-    lid-close { spawn "hyprlock"; }
+    lid-close { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
-    Mod+Space    hotkey-overlay-title="Run an Application: drun" repeat=false { spawn "tofi-drun" "--drun-launch=true"; }
+    Mod+Space    hotkey-overlay-title="Run an Application: noctalia" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Super+Escape hotkey-overlay-title="Lock the Screen: hyprlock" repeat=false { spawn "hyprlock"; }
 
     Super+Shift+C repeat=false { spawn "~/.config/niri/pick_color"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/shell_scripts/change_volume" "up"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "~/shell_scripts/change_volume" "down"; }
-    XF86AudioMute        allow-when-locked=true { spawn "~/shell_scripts/change_volume" "mute"; }
+    XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+
     XF86AudioPrev        allow-when-locked=true { spawn "mpc" "prev"; }
-    XF86AudioPlay        allow-when-locked=true { spawn "~/shell_scripts/music_toggle"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "mpc" "toggle"; }
     XF86AudioNext        allow-when-locked=true { spawn "mpc" "next"; }
     
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "~/shell_scripts/change_brightness_w" "inc"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "~/shell_scripts/change_brightness_w" "dec"; }
+    XF86MonBrightnessUp { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     Mod+Tab repeat=false { toggle-overview; }
 
@@ -308,3 +303,7 @@ binds {
     // moving the mouse or pressing any other key.
     // Mod+Shift+P { power-off-monitors; }
 }
+
+spawn-at-startup "fcitx5"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "qs" "-c" "noctalia-shell"

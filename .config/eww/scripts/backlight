@@ -1,7 +1,0 @@
-#!/bin/bash
-
-current=$(brightnessctl g)
-max=$(brightnessctl m)
-percent=$((100 * current / max))
-
-echo "{\"percent\": $percent}"

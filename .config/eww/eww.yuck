@@ -1,4 +1,0 @@
-;; (include "bars/river_bar.yuck")
-(include "bars/niri_bar.yuck")
-
-(defvar eww "eww -c $HOME/.config/eww")

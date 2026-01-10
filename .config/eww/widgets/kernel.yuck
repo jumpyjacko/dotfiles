@@ -1,9 +1,0 @@
-(defpoll kernel_ver :interval "20h" "uname -r")
-
-(defwidget kernel []
-  (box :class "kernel"
-       :vexpand false
-       :hexpand false
-    (label :text kernel_ver)
-  )
-)
