@@ -442,7 +442,7 @@
                 "enabled": true
             }
         ],
-        "showHeader": false,
+        "showHeader": true,
         "showNumberLabels": false
     },
     "settingsVersion": 37,
