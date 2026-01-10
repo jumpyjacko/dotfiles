@@ -43,6 +43,7 @@ output "DP-2" {
 layout {
     gaps 8
     center-focused-column "never"
+    background-color "#000000"
 
     preset-column-widths {
         proportion 0.33333
@@ -85,6 +86,12 @@ layout {
 overview {
     zoom 0.4
     backdrop-color "#000000"
+}
+
+recent-windows {
+    highlight {
+        corner-radius 14
+    }
 }
 
 environment {
