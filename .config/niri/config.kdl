@@ -96,7 +96,7 @@ recent-windows {
 
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
-    QT_QPA_PLATFORMTHEME "qt5ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     QT_SCALE_FACTOR "1.25"
 
     QT_IM_MODULE "fcitx"
