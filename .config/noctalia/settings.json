@@ -316,7 +316,7 @@
         "wallpaperChange": ""
     },
     "location": {
-        "analogClockInCalendar": false,
+        "analogClockInCalendar": true,
         "firstDayOfWeek": -1,
         "name": "Sydney",
         "showCalendarEvents": true,
