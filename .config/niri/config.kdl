@@ -34,10 +34,10 @@ output "eDP-1" {
 }
 
 output "DP-2" {
-    off
-//     mode "2560x1440"
-//     scale 1
-//     position x=0 y=-1440
+    // off
+    mode "2560x1440"
+    scale 1
+    position x=0 y=-1440
 }
 
 layout {
@@ -150,7 +150,7 @@ binds {
 
     Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
     Mod+Space    hotkey-overlay-title="Run an Application: noctalia" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Super+Escape hotkey-overlay-title="Lock the Screen: hyprlock" repeat=false { spawn "hyprlock"; }
+    Super+Escape hotkey-overlay-title="Lock the Screen: noctalia" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
     Super+Shift+C repeat=false { spawn "~/.config/niri/pick_color"; }
 

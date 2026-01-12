@@ -33,8 +33,8 @@
         "density": "default",
         "exclusive": true,
         "floating": false,
-        "marginHorizontal": 0.25,
-        "marginVertical": 0.25,
+        "marginHorizontal": 5,
+        "marginVertical": 5,
         "monitors": [
         ],
         "outerCorners": true,
@@ -226,9 +226,6 @@
                 },
                 {
                     "id": "Bluetooth"
-                },
-                {
-                    "id": "ScreenRecorder"
                 },
                 {
                     "id": "WallpaperSelector"
@@ -474,7 +471,7 @@
         "alacritty": false,
         "cava": false,
         "code": false,
-        "discord": false,
+        "discord": true,
         "emacs": false,
         "enableUserTemplates": false,
         "foot": false,
