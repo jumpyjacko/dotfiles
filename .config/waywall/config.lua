@@ -37,7 +37,7 @@ local toggle_remaps_key = "F8"
 -- ==== MISC ====
 local remaps_text_config = { text = "rebinds off", x = 1570, y = 1400, size = 2 }
 local res_1440 = true
-local sens_change = { enabled = true, normal = 1.33895881, tall = 0.09032536 } -- make sure raw input is off
+local sens_change = { enabled = true, normal = 1, tall = 0.0674594 } -- make sure raw input is off
 
 
 
