@@ -51,15 +51,20 @@
         "widgets": {
             "center": [
                 {
+                    "compactMode": false,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
                     "hideMode": "idle",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 300,
+                    "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": false,
-                    "showVisualizer": true,
+                    "showVisualizer": false,
                     "useFixedWidth": false,
                     "visualizerType": "linear"
                 },
@@ -77,14 +82,18 @@
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
+                    "emptyColor": "secondary",
                     "enableScrollWheel": true,
+                    "focusedColor": "primary",
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "none",
+                    "occupiedColor": "secondary",
                     "showApplications": false,
+                    "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
                 },
@@ -101,12 +110,21 @@
             "right": [
                 {
                     "defaultSettings": {
-                        "hideInactive": false,
-                        "removeMargins": false
+                        "completedCount": 0,
+                        "count": 0,
+                        "current_page_id": 0,
+                        "isExpanded": false,
+                        "pages": [
+                            {
+                                "id": 0,
+                                "name": "General"
+                            }
+                        ],
+                        "showBackground": true,
+                        "showCompleted": true,
+                        "todos": [
+                        ]
                     },
-                    "id": "plugin:privacy-indicator"
-                },
-                {
                     "id": "plugin:todo"
                 },
                 {
@@ -121,12 +139,14 @@
                 },
                 {
                     "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
                     "id": "NotificationHistory",
                     "showUnreadBadge": true
                 },
                 {
                     "deviceNativePath": "",
                     "displayMode": "onhover",
+                    "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -135,7 +155,8 @@
                 },
                 {
                     "displayMode": "onhover",
-                    "id": "Volume"
+                    "id": "Volume",
+                    "middleClickCommand": "pwvucontrol || pavucontrol"
                 },
                 {
                     "displayMode": "onhover",
@@ -439,7 +460,7 @@
         "showHeader": true,
         "showNumberLabels": false
     },
-    "settingsVersion": 37,
+    "settingsVersion": 44,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
