@@ -521,23 +521,21 @@ local rebind_text = nil
 --*********************************************************************************************** KEYBINDS
 
 local function resize_helper(mode, run)
-    return helpers.ingame_only(
-        function()
-            if not remaps_active then
-                return false
-            end
-            if mode.f3_safe and waywall.get_key("F3") then
-                return false
-            end
-            run()
+    return function()
+        if not remaps_active then
+            return false
         end
-    )
+        if mode.f3_safe and waywall.get_key("F3") then
+            return false
+        end
+        run()
+    end
 end
 
 config.actions = {
 
-    [thin.key] = resize_helper(thin, function() resolutions.thin() end),
-    [wide.key] = resize_helper(wide, function() resolutions.wide() end),
+    [thin.key] = helpers.ingame_only(resize_helper(thin, function() resolutions.thin() end)),
+    [wide.key] = helpers.ingame_only(resize_helper(wide, function() resolutions.wide() end)),
     [tall.key] = resize_helper(tall, function() resolutions.tall() end),
 
     [toggle_ninbot_key] = function()
