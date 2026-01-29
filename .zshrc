@@ -1,4 +1,6 @@
 # zmodload zsh/zprof
+autoload -Uz compinit
+compinit
 
 # Enabling version control information
 autoload -Uz vcs_info
