@@ -33,6 +33,11 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "DP-1" {
+    mode "1920x1080"
+    position x=0 y=1440
+}
+
 output "DP-2" {
     // off
     mode "2560x1440"
@@ -123,7 +128,7 @@ window-rule {
 // Windows to open maximized
 window-rule {
     match app-id="zen"
-    match app-id="Chromium"
+    match app-id="helium"
     match app-id="legcord"
     match app-id="blender"
     match app-id=r#"MuseScore*"#
@@ -148,7 +153,7 @@ switch-events {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return   hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
+    Mod+Return   hotkey-overlay-title="Open a Terminal: foot" repeat=false { spawn "foot"; }
     Mod+Space    hotkey-overlay-title="Run an Application: noctalia" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Super+Escape hotkey-overlay-title="Lock the Screen: noctalia" repeat=false { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 

@@ -43,13 +43,6 @@ export WINEPREFIX="$XDG_DATA_HOME/wine"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Fcitx5 Exports
-# export GTK_IM_MODULE=fcitx
-# export QT_IM_MODULE=fcitx
-# export XMODIFIERS=@im=fcitx
-# export GLFW_IM_MODULE=ibus
-# export QT_AUTO_SCREEN_SCALE_FACTOR=0
-
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
 
@@ -96,15 +89,16 @@ alias p="sudo pacman"
 alias e="nvim"
 alias sudoe="sudo -E -s nvim"
 
-alias list_packages="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
+alias list_packages="pacman -Qi | grep -E '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
 
-alias t="tmux"
-alias ta="tmux attach -d -t"
-alias tn="tmux new-session -A -s"
-alias tk="tmux kill-session -t"
-alias tl="tmux list-sessions"
+t() {
+    local session_name="${1:-$(basename "$PWD" | tr '.' '_')}"
+    tmux new-session -A -s "$session_name"
+}
 
 alias ..="cd .."
+
+alias fv="fava ~/beancount/jackson.beancount 2>&1 | awk '!opened && match(\$0, /(https?:\\/\\/[^ ]+)/, m) { system(\"xdg-open \" m[1]); opened=1 } { print }'"
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd load_late
