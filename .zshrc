@@ -40,35 +40,8 @@ export JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
-export QT_QPA_PLATFORMTHEME=qt5ct
-export _JAVA_AWT_WM_NONREPARENTING=1
-
 # Enabling ctrl+backspace
 bindkey "^H" backward-delete-word
-
-# Changing tty colours
-if [ "$TERM" = "linux" ]; then
-  /bin/echo -e "
-  \e]P0000000
-  \e]P1bf616a
-  \e]P2a3be8c
-  \e]P3ebcb8b
-  \e]P48fa1b3
-  \e]P5b48ead
-  \e]P696b5b4
-  \e]P7c0c5ce
-  \e]P865737e
-  \e]P9bf616a
-  \e]PAa3be8c
-  \e]PBebcb8b
-  \e]PC8fa1b3
-  \e]PDb48ead
-  \e]PE96b5b4
-  \e]PFeff1f5
-  "
-  # Get rid of artifacts
-  clear
-fi
 
 export BAT_THEME="ansi"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -78,16 +51,10 @@ export MANROFFOPT="-c"
 alias ls="eza -la --git --group-directories-first"
 alias cat="bat --paging=never --decorations=never"
 alias lg="lazygit"
-serve_alias() {
-  firefox http://localhost:8080 & disown
-  miniserve --index index.html --verbose --port 8080
-}
-alias serve="serve_alias"
 alias gitslog="git log --pretty=format:'%C(auto)%h %Cblue%ad %Cgreen%s%Creset' --date=iso --graph --decorate --all"
 
 alias p="sudo pacman"
-alias e="nvim"
-alias sudoe="sudo -E -s nvim"
+alias sunvim="sudo -E -s nvim"
 
 alias list_packages="pacman -Qi | grep -E '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t | sort -nrk 2 | grep MiB | less"
 
@@ -109,4 +76,4 @@ load_late() {
 }
 
 # zprof
-#. /usr/share/nvm/init-nvm.sh
+# . /usr/share/nvm/init-nvm.sh
