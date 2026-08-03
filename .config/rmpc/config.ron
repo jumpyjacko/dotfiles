@@ -6,7 +6,6 @@
     password: None,
     theme: Some("theme"),
     cache_dir: None,
-    // on_song_change: ["~/.config/rmpc/scripts/notify"],
     volume_step: 1,
     max_fps: 30,
     scrolloff: 0,
@@ -31,9 +30,9 @@
             "1":       SwitchToTab("Home"),
             "2":       SwitchToTab("Directories"),
             "3":       SwitchToTab("Playlists"),
-            "4":       SwitchToTab("Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Album Artists"),
+            "4":       SwitchToTab("Album Artists"),
+            "5":       SwitchToTab("Artists"),
+            "6":       SwitchToTab("Albums"),
             "7":       SwitchToTab("Genre"),
             "8":       SwitchToTab("Queue"),
             "9":       SwitchToTab("Show"),
@@ -136,16 +135,16 @@
                     (size: "100%", borders: "ALL", pane: Pane(Playlists)),
                 ])
         ),
+        (name: "Album Artists", pane: Split(direction: Horizontal, panes: [
+                    (size: "100%", borders: "ALL", pane: Pane(AlbumArtists)),
+                ])
+        ),
         (name: "Artists", pane: Split(direction: Horizontal, panes: [
                     (size: "100%", borders: "ALL", pane: Pane(Artists)),
                 ])
         ),
         (name: "Albums", pane: Split(direction: Horizontal, panes: [
                     (size: "100%", borders: "ALL", pane: Pane(Albums)),
-                ])
-        ),
-        (name: "Album Artists", pane: Split(direction: Horizontal, panes: [
-                    (size: "100%", borders: "ALL", pane: Pane(AlbumArtists)),
                 ])
         ),
         (name: "Genre", pane: Split(direction: Horizontal, panes: [
