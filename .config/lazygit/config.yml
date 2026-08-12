@@ -1,9 +1,9 @@
 gui:
   border: 'hidden'
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: bat --paging=never --decorations=never
+      command: bat --paging=never --decorations=never
 keybinding:
   universal:
     prevItem-alt: 'e'
