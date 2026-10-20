@@ -7,3 +7,6 @@ invert = false
 show_preview = true
 
 enter_accept = true
+
+[ai]
+enabled = false
